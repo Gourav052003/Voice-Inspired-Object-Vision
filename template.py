@@ -1,11 +1,18 @@
+from genericpath import exists
 from pathlib import Path
+import logging
+import os
 
-FILENAMES = [
+logging.basicConfig(filename="Logs.log",
+                    level = logging.INFO,
+                    format='%(asctime)s %(message)s')
+
+FILE_PATHS = [
 
         Path(f".github/workflows/main.yaml"),
         Path(f"dvc.yaml"),
 
-        Path(f"Artifacts"),
+        Path(f"Artifacts/Info.txt"),
 
         Path(f"Src/__init__.py"),
 
@@ -15,6 +22,7 @@ FILENAMES = [
         Path(f"Src/Entities/entity.py"),
 
         Path(f"Src/Logger.py"),
+        Path(f"Src/Exceptions.py"),
         Path(f"Src/Utils.py"),
 
         Path(f"Src/Config.yaml"),
@@ -29,11 +37,45 @@ FILENAMES = [
         Path(f"Src/Pipelines/__init__.py"),
         Path(f"Src/Main.py"),
 
-        Path(f"Application")
+        Path(f"Application/Info.txt")
 
 ]
 
 
+def create_project_structure(FILE_PATHS):
+    
+    for file_path in FILE_PATHS:
+        
+        directory,filename = os.path.split(file_path)
+        
+        if directory!="":
+            os.makedirs(directory,exist_ok=True)
+            logging.info(f"<<'{directory}'>> Directory Created") 
+        else:
+            logging.info(f"<<'{directory}'>> is a not Valid directory path or directory")     
 
+        if (not os.path.exists(file_path)) or (os.path.getsize(file_path)==0):
+        
+            with open(file_path,"w") as f:
+                logging.info(f"Empty <'{filename}'> in <<'{directory}'>> created!")
+
+        else:
+
+            if os.path.exists(file_path):
+                logging.info(f"<'{filename}'> already exists in <<'{directory}'>>")
+
+            if  os.path.getsize(file_path)!=0:
+                logging.info(f"<'{filename}'> in <<'{directory}'>> contains some content")   
+
+
+
+if __name__ == "__main__":
+    
+    logging.info("\n====================== Executing template.py  ==========================")
+    logging.info("\n==================== Creating project structure ========================\n")
+    
+    create_project_structure(FILE_PATHS)
+
+    logging.info("\n===================== Project Structure Created! ========================\n")
 
 
