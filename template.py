@@ -1,11 +1,19 @@
 from genericpath import exists
 from pathlib import Path
-import logging
+import logging 
 import os
+import sys
 
-logging.basicConfig(filename="Logs.log",
+logging.basicConfig(
                     level = logging.INFO,
-                    format='%(asctime)s %(message)s')
+                    format='[%(asctime)s: %(levelname)s: %(module)s: %(message)s]',
+                    
+                    handlers=[
+                        logging.FileHandler("Logs.log"),
+                        logging.StreamHandler(sys.stdout)
+                        ]
+                    
+                    )
 
 FILE_PATHS = [
 
@@ -46,14 +54,33 @@ def create_project_structure(FILE_PATHS):
     
     for file_path in FILE_PATHS:
         
+
+        '''
+        Get the Directory and Filename splitted from given 'file_path'
+        '''
         directory,filename = os.path.split(file_path)
         
+
+
+        '''
+        Check if the 'directory' is a valid directory or directory path
+        
+        '''
         if directory!="":
             os.makedirs(directory,exist_ok=True)
             logging.info(f"<<'{directory}'>> Directory Created") 
         else:
             logging.info(f"<<'{directory}'>> is a not Valid directory path or directory")     
 
+
+
+        '''
+        Check If the 'file_path' exists.
+                    OR
+        Check If the file at 'file_path' contains some content, 
+        if it does then then new file will not be  created.             
+        
+        '''
         if (not os.path.exists(file_path)) or (os.path.getsize(file_path)==0):
         
             with open(file_path,"w") as f:
