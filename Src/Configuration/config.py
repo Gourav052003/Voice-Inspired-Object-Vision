@@ -1,6 +1,6 @@
 from Constant import CONFIG_FILE_PATH,PARAMS_FILE_PATH,DOWNLOAD_URL
 from Utils import read_yaml
-from Entities.entity import (DataIngestionConfig)
+from Entities.entity import (DataIngestionConfig,DataValidationConfig)
 
 
 class ConfigurationManager:
@@ -25,5 +25,20 @@ class ConfigurationManager:
         return data_ingestion_config
 
 
+    def get_data_validation_config(self)->DataValidationConfig:
 
+        config = self.config.DataValidation 
+
+        data_validation_config = DataValidationConfig(
+
+            IMAGES_DATASET_PATH = config.IMAGES_DATASET_PATH,
+            ANNOTATIONS_DATASET_PATH = config.ANNOTATIONS_DATASET_PATH,
+            META_DATA_FILE_PATH = config.META_DATA_FILE_PATH,
+            TRAIN_DATA_FILE_PATH = config.TRAIN_DATA_FILE_PATH,
+            VALIDATION_DATA_FILE_PATH = config.VALIDATION_DATA_FILE_PATH,
+            TEST_DATA_FILE_PATH = config.TEST_DATA_FILE_PATH
+
+        )
+
+        return data_validation_config
 

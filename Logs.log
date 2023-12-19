@@ -4,3 +4,86 @@
 [2023-12-18 22:25:05,761: INFO: Main: >>>>>> stage Data Ingestion stage completed <<<<<<
 
 x==========x]
+[2023-12-19 12:00:03,237: INFO: Main: >>>>>> stage Data Ingestion stage started <<<<<<]
+[2023-12-19 12:00:03,240: INFO: Main: >>>>>> stage Data Ingestion stage completed <<<<<<
+
+x==========x]
+[2023-12-19 12:00:03,240: INFO: Main: >>>>>> stage Data Validation stage started <<<<<<]
+[2023-12-19 12:00:03,263: INFO: Utils: yaml file: Src\Config.yaml loaded successfully]
+[2023-12-19 12:00:03,272: INFO: Utils: yaml file: Src\Params.yaml loaded successfully]
+[2023-12-19 12:00:03,274: ERROR: Main: 'ConfigurationManager' object has no attribute 'DataValidation']
+Traceback (most recent call last):
+  File "C:\Users\hp\Desktop\Voice-Inspired-Object-Vision\Src\Main.py", line 25, in <module>
+    Data_validation_training_pipeline.start()
+  File "C:\Users\hp\Desktop\Voice-Inspired-Object-Vision\Src\Pipelines\stage_02_data_validation.py", line 21, in start
+    data_validation_config = config.get_data_validation_config()
+  File "C:\Users\hp\Desktop\Voice-Inspired-Object-Vision\Src\Configuration\config.py", line 30, in get_data_validation_config
+    config = self.DataValidation
+AttributeError: 'ConfigurationManager' object has no attribute 'DataValidation'
+[2023-12-19 12:02:10,770: INFO: Main: >>>>>> stage Data Ingestion stage started <<<<<<]
+[2023-12-19 12:02:10,771: INFO: Main: >>>>>> stage Data Ingestion stage completed <<<<<<
+
+x==========x]
+[2023-12-19 12:02:10,771: INFO: Main: >>>>>> stage Data Validation stage started <<<<<<]
+[2023-12-19 12:02:10,774: INFO: Utils: yaml file: Src\Config.yaml loaded successfully]
+[2023-12-19 12:02:10,776: INFO: Utils: yaml file: Src\Params.yaml loaded successfully]
+[2023-12-19 12:02:10,815: ERROR: Main: [WinError 3] The system cannot find the path specified: 'Artifacts/train']
+Traceback (most recent call last):
+  File "C:\Users\hp\Desktop\Voice-Inspired-Object-Vision\Src\Main.py", line 25, in <module>
+    Data_validation_training_pipeline.start()
+  File "C:\Users\hp\Desktop\Voice-Inspired-Object-Vision\Src\Pipelines\stage_02_data_validation.py", line 24, in start
+    data_validation.execute_splitting(train,validation,test)
+  File "C:\Users\hp\Desktop\Voice-Inspired-Object-Vision\Src\Components\Data_Validation.py", line 62, in execute_splitting
+    shutil.rmtree(validation_directory)
+  File "C:\Users\hp\AppData\Local\Programs\Python\Python39\lib\shutil.py", line 748, in rmtree
+    return _rmtree_unsafe(path, onerror)
+  File "C:\Users\hp\AppData\Local\Programs\Python\Python39\lib\shutil.py", line 607, in _rmtree_unsafe
+    onerror(os.scandir, path, sys.exc_info())
+  File "C:\Users\hp\AppData\Local\Programs\Python\Python39\lib\shutil.py", line 604, in _rmtree_unsafe
+    with os.scandir(path) as scandir_it:
+FileNotFoundError: [WinError 3] The system cannot find the path specified: 'Artifacts/train'
+[2023-12-19 12:03:50,892: INFO: Main: >>>>>> stage Data Ingestion stage started <<<<<<]
+[2023-12-19 12:03:50,893: INFO: Main: >>>>>> stage Data Ingestion stage completed <<<<<<
+
+x==========x]
+[2023-12-19 12:03:50,893: INFO: Main: >>>>>> stage Data Validation stage started <<<<<<]
+[2023-12-19 12:03:50,896: INFO: Utils: yaml file: Src\Config.yaml loaded successfully]
+[2023-12-19 12:03:50,897: INFO: Utils: yaml file: Src\Params.yaml loaded successfully]
+[2023-12-19 12:03:50,914: ERROR: Main: 'DataValidation' object has no attribute 'SOURCE_DATASET_PATH']
+Traceback (most recent call last):
+  File "C:\Users\hp\Desktop\Voice-Inspired-Object-Vision\Src\Main.py", line 25, in <module>
+    Data_validation_training_pipeline.start()
+  File "C:\Users\hp\Desktop\Voice-Inspired-Object-Vision\Src\Pipelines\stage_02_data_validation.py", line 24, in start
+    data_validation.execute_splitting(train,validation,test)
+  File "C:\Users\hp\Desktop\Voice-Inspired-Object-Vision\Src\Components\Data_Validation.py", line 66, in execute_splitting
+    self.copy_to(train,self.SOURCE_DATASET_PATH,self.VALIDATION_DIRECTORIES[0])
+AttributeError: 'DataValidation' object has no attribute 'SOURCE_DATASET_PATH'
+[2023-12-19 12:04:46,368: INFO: Main: >>>>>> stage Data Ingestion stage started <<<<<<]
+[2023-12-19 12:04:46,369: INFO: Main: >>>>>> stage Data Ingestion stage completed <<<<<<
+
+x==========x]
+[2023-12-19 12:04:46,369: INFO: Main: >>>>>> stage Data Validation stage started <<<<<<]
+[2023-12-19 12:04:46,372: INFO: Utils: yaml file: Src\Config.yaml loaded successfully]
+[2023-12-19 12:04:46,373: INFO: Utils: yaml file: Src\Params.yaml loaded successfully]
+[2023-12-19 12:04:46,392: ERROR: Main: copy_to() takes 3 positional arguments but 4 were given]
+Traceback (most recent call last):
+  File "C:\Users\hp\Desktop\Voice-Inspired-Object-Vision\Src\Main.py", line 25, in <module>
+    Data_validation_training_pipeline.start()
+  File "C:\Users\hp\Desktop\Voice-Inspired-Object-Vision\Src\Pipelines\stage_02_data_validation.py", line 24, in start
+    data_validation.execute_splitting(train,validation,test)
+  File "C:\Users\hp\Desktop\Voice-Inspired-Object-Vision\Src\Components\Data_Validation.py", line 66, in execute_splitting
+    self.copy_to(train,self.SOURCE_DATASET_PATHS,self.VALIDATION_DIRECTORIES[0])
+TypeError: copy_to() takes 3 positional arguments but 4 were given
+[2023-12-19 12:05:39,523: INFO: Main: >>>>>> stage Data Ingestion stage started <<<<<<]
+[2023-12-19 12:05:39,523: INFO: Main: >>>>>> stage Data Ingestion stage completed <<<<<<
+
+x==========x]
+[2023-12-19 12:05:39,524: INFO: Main: >>>>>> stage Data Validation stage started <<<<<<]
+[2023-12-19 12:05:39,526: INFO: Utils: yaml file: Src\Config.yaml loaded successfully]
+[2023-12-19 12:05:39,528: INFO: Utils: yaml file: Src\Params.yaml loaded successfully]
+[2023-12-19 12:06:00,410: INFO: Data_Validation: Train set is now ready!]
+[2023-12-19 12:06:06,801: INFO: Data_Validation: Validation set is now ready!]
+[2023-12-19 12:06:11,926: INFO: Data_Validation: Test set is now ready!]
+[2023-12-19 12:06:11,928: INFO: Main: >>>>>> stage Data Validation stage completed <<<<<<
+
+x==========x]

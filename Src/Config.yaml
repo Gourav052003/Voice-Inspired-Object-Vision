@@ -1,3 +1,11 @@
 DataIngestion:
   ZIP_FILENAME : "Artifacts/Dataset.zip"
   UNZIP_DIRECTORY : "Artifacts/Dataset"
+
+DataValidation:
+  IMAGES_DATASET_PATH : "Artifacts/Dataset/images"
+  ANNOTATIONS_DATASET_PATH : "Artifacts/Dataset/annotations"
+  META_DATA_FILE_PATH : "Artifacts/Dataset/Meta-Data.csv"
+  TRAIN_DATA_FILE_PATH : "Artifacts/train" 
+  VALIDATION_DATA_FILE_PATH : "Artifacts/validation"
+  TEST_DATA_FILE_PATH : "Artifacts/test"
