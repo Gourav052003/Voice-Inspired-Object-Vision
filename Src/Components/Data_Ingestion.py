@@ -1,5 +1,6 @@
-from Entities.entity import (DataIngestionConfig)
 from Logger import logger
+from Entities.entity import DataIngestionConfig
+
 import os
 import zipfile
 import gdown

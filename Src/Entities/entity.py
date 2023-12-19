@@ -15,3 +15,9 @@ class DataValidationConfig:
     TRAIN_DATA_FILE_PATH : Path 
     VALIDATION_DATA_FILE_PATH : Path 
     TEST_DATA_FILE_PATH : Path 
+
+@dataclass(frozen=True)
+class DataPreparationConfig:
+    TRAIN_META_DATA_FILE_PATH: Path 
+    VALIDATION_META_DATA_FILE_PATH: Path 
+

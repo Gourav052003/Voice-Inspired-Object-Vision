@@ -1,10 +1,14 @@
+from Logger import logger
+from Entities.entity import DataValidationConfig
+
+from box import ConfigBox
+from sklearn.model_selection import train_test_split
+
 import os
 import shutil
 import pandas as pd
-from sklearn.model_selection import train_test_split
-from Logger import logger
-from box import ConfigBox
-from Entities.entity import DataValidationConfig
+
+
 
 class DataValidation:
 
@@ -73,6 +77,10 @@ class DataValidation:
         logger.info("Test set is now ready!")
 
 
+    def validate_data(self):
+
+        train,validation,test = self.train_validation_test_splitting()
+        self.execute_splitting(train,validation,test)
        
             
 

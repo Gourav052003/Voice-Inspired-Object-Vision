@@ -9,7 +9,7 @@ from Logger import logger
 from Configuration.config import ConfigurationManager
 from Components.Data_Ingestion import DataIngestion
 
-STAGE_NAME = "Data Ingestion stage"
+STAGE_NAME = "Data Ingestion"
 
 class DataIngestionTrainingPipeline:
 

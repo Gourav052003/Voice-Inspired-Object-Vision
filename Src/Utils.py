@@ -3,7 +3,9 @@ from box import ConfigBox
 from box.exceptions import BoxValueError
 from Logger import logger
 from pathlib import Path
+from glob import glob
 import yaml
+import os
 
 
 @ensure_annotations
@@ -29,4 +31,23 @@ def read_yaml(path_to_yaml: Path) -> ConfigBox:
         raise ValueError("yaml file is empty")
     except Exception as e:
         raise e
-    
+
+
+
+def remove_files(dir_name):
+
+    p = glob(dir_name+'/*')
+
+    if len(p)!=0:
+
+        for files in p:
+            f = files
+
+            try:
+                os.remove(f)
+            except:
+                logger.info(f"{f} does not exists")
+                return
+
+            logger.info(f"{f} file removed")
+
