@@ -73,7 +73,7 @@ class DataPreparation:
         captions_directory_path = Path(f"Artifacts/{set_type}/captions")
         roi_directory_path = Path(f"Artifacts/{set_type}/roi")
 
-        image_to_text = pipeline("image-to-text", model="nlpconnect/vit-gpt2-image-captioning")
+        image_to_text = pipeline("image-to-text", model="nlpconnect/vit-gpt2-image-captioning",from_pt=True)
 
         os.makedirs(captions_directory_path,exist_ok = True)
         remove_files(captions_directory_path.as_posix())
