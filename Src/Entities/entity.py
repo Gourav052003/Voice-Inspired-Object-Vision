@@ -21,3 +21,13 @@ class DataPreparationConfig:
     TRAIN_META_DATA_FILE_PATH: Path 
     VALIDATION_META_DATA_FILE_PATH: Path 
 
+'''
+Feature Extraction Configuration is not needed because
+it will be hard coded with optimizations in components 
+Feature_Extraction.py and config.py
+'''
+
+
+
+
+

@@ -13,4 +13,4 @@ DataValidation:
 DataPreparation:
   TRAIN_META_DATA_FILE_PATH : "Artifacts/train/Meta-Data.csv"
   VALIDATION_META_DATA_FILE_PATH : "Artifacts/validation/Meta-Data.csv"
- 
+
