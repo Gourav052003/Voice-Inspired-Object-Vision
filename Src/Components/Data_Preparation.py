@@ -1,12 +1,16 @@
+# import os
+# import sys
+
 from Logger import logger 
-from Utils import remove_files
+from Utils import remove_files,load_pickle
+from Constant import IMAGE_TO_TEXT_MODEL_PATH
 from Entities.entity import DataPreparationConfig
 
 from pathlib import Path
 from glob import glob
 from tqdm import tqdm
 from bs4 import BeautifulSoup
-from transformers import pipeline
+# from transformers import pipeline
 
 import numpy as np
 import pandas as pd
@@ -15,17 +19,16 @@ import cv2
 
 corrupt_roi = []
 
+# image_to_text = pipeline("image-to-text", model="nlpconnect/vit-gpt2-image-captioning")
+image_to_text = load_pickle(IMAGE_TO_TEXT_MODEL_PATH)
+logger.info("Image-to-text model loaded")
+
 class DataPreparation:
 
     def __init__(self,config:DataPreparationConfig):
 
         self.TRAIN_META_DATA_FILE_PATH = config.TRAIN_META_DATA_FILE_PATH
         self.VALIDATION_META_DATA_FILE_PATH = config.VALIDATION_META_DATA_FILE_PATH
-
-        # self.ROI_PATH = config.ROI_PATH
-        # self.CATPIONS_CSV_PATH = config.CATPIONS_CSV_PATH
-        # self.ANNOTATIONS_TEXT_FILE_PATH = config.ANNOTATIONS_TEXT_FILE_PATH
-
 
     def scale_bbox(self,original_image_shape,bb_annotations,scaled_image_shape = (224,224,3)):
 
@@ -73,8 +76,6 @@ class DataPreparation:
         captions_directory_path = Path(f"Artifacts/{set_type}/captions")
         roi_directory_path = Path(f"Artifacts/{set_type}/roi")
 
-        image_to_text = pipeline("image-to-text", model="nlpconnect/vit-gpt2-image-captioning",from_pt=True)
-
         os.makedirs(captions_directory_path,exist_ok = True)
         remove_files(captions_directory_path.as_posix())
 
@@ -98,7 +99,7 @@ class DataPreparation:
         caption_csv = os.path.join(captions_directory_path,'captions.csv')
         captions_df.to_csv(caption_csv)
 
-        logger.info("captions.csv successfully generated! in {captions_directory_path} directory for {set_type} set")
+        logger.info(f"captions.csv successfully generated! in {captions_directory_path} directory for {set_type} set")
 
    
     def get_ROIs(self,set_type = 'train'):
@@ -175,7 +176,6 @@ class DataPreparation:
         
         '''
 
-        
         save_directory_path = Path(f"Artifacts/{set_type}/BB_annotations")
         annotation_directory_path = Path(f"Artifacts/{set_type}/annotations/*")
 
@@ -183,9 +183,12 @@ class DataPreparation:
         os.makedirs(save_directory_path,exist_ok = True)
         remove_files(save_directory_path.as_posix())
 
-        annotations_path = glob(annotation_directory_path)
+        annotations_paths = glob(annotation_directory_path.as_posix())
+        
+        annotations_paths = [path for path in annotations_paths if path.split('/')[-1].split('.')[0] not in corrupt_roi ]
 
-        for annot_path in tqdm(annotations_path):
+
+        for annot_path in tqdm(annotations_paths):
 
             filename = annot_path.split('/')[-1].split('.')[0]
 
@@ -210,14 +213,14 @@ class DataPreparation:
 
             annots = ','.join([filename+'.txt',str(scaled_xmin),str(scaled_ymin),str(scaled_xmax),str(scaled_ymax),'\n'])
 
-            with open(save_directory_path+'/annotations.txt','a') as annot_file:
+            with open(save_directory_path.as_posix()+'/annotations.txt','a') as annot_file:
                 annot_file.write(annots)
 
 
         f.close()
         annot_file.close()
 
-        logger.log("Annotations.txt successfully generated in {save_directory_path} for {set_type} set")        
+        logger.info(f"Annotations.txt successfully generated in {save_directory_path} for {set_type} set")        
 
 
     def prepare_data(self):

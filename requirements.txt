@@ -1,13 +1,14 @@
-# pyYAML
-# gdown
-# python-box==7.1.1
-# ensure==1.0.3
-# pandas
-# scikit-learn
-# transformers
-# tensorflow
-tensorflow_text
-# beautifulsoup4
-# tqdm
-# opencv-python
-# lxml
+pyYAML
+gdown
+python-box==7.1.1
+ensure==1.0.3
+pandas
+scikit-learn
+transformers==4.35.2
+tensorflow==2.15.0
+beautifulsoup4
+tqdm
+opencv-python
+lxml
+torch
+Pillow

@@ -6,3 +6,5 @@ DOWNLOAD_URL = f"https://drive.google.com/uc?/export=download&id={FILE_ID}"
 
 CONFIG_FILE_PATH = Path("Src/Config.yaml")
 PARAMS_FILE_PATH = Path("Src/Params.yaml")
+
+IMAGE_TO_TEXT_MODEL_PATH = Path("Artifacts/Dataset/image-to-text pipeline")

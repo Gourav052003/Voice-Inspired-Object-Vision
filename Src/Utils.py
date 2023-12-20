@@ -4,6 +4,7 @@ from box.exceptions import BoxValueError
 from Logger import logger
 from pathlib import Path
 from glob import glob
+from pickle import load,dump
 import yaml
 import os
 
@@ -51,3 +52,14 @@ def remove_files(dir_name):
 
             logger.info(f"{f} file removed")
 
+
+def save_as_pickle(fname,data):
+  pfile = open(fname,'ab')
+  dump(data,pfile)
+  pfile.close()
+
+def load_pickle(fname):
+  pfile = open(fname,'rb')
+  data = load(pfile)
+  pfile.close()
+  return data  

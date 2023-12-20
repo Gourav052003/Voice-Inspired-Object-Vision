@@ -13,9 +13,4 @@ DataValidation:
 DataPreparation:
   TRAIN_META_DATA_FILE_PATH : "Artifacts/train/Meta-Data.csv"
   VALIDATION_META_DATA_FILE_PATH : "Artifacts/validation/Meta-Data.csv"
-
-  # IMAGE_DATSET_PATH: "Artifacts/Datasets/images/*"  
-  # ANNOTATIONS_DATASET_PATH: "Artifacts/Datasets/annotations/*" 
-  # ROI_PATH :  "Artifacts//ROI"
-  # CATPIONS_CSV_PATH :  "Artifacts/Datasets"
-  # ANNOTATIONS_TEXT_FILE_PATH : "Artifacts/Datasets"   
+ 
