@@ -81,12 +81,12 @@ class FeatureExtraction:
         image_features = []
 
         images = glob(images_path)
-
+       
         for img_path in tqdm(images):
 
             filename = img_path.split('/')[-1].split('.')[0]
 
-            if filename not in roi_valid_file_prefixes:
+            if filename in roi_valid_file_prefixes:
                 continue
 
             img = cv2.imread(img_path)
@@ -155,8 +155,9 @@ class FeatureExtraction:
 
             image_features,text_sequences,bb_labels = self.get_data_features(set_type = set_type)
 
+           
             features = [image_features,bb_labels,text_sequences]
-            
+
             features_names = ["image_features","bb_labels","text_sequences"]
 
             for idx,feature in enumerate(features):

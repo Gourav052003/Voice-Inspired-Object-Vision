@@ -6312,3 +6312,619 @@ Traceback (most recent call last):
   File "C:\Users\hp\Desktop\Voice-Inspired-Object-Vision\Project-Environment\lib\site-packages\keras\src\engine\data_adapter.py", line 1795, in train_validation_split
     raise ValueError(
 ValueError: Training data contains 0 samples, which is not sufficient to split it into a validation and training set as specified by `validation_split=0.3`. Either provide more data, or a different value for the `validation_split` argument.
+[2023-12-21 22:19:12,907: WARNING: module_wrapper: From C:\Users\hp\Desktop\Voice-Inspired-Object-Vision\Project-Environment\lib\site-packages\keras\src\losses.py:2976: The name tf.losses.sparse_softmax_cross_entropy is deprecated. Please use tf.compat.v1.losses.sparse_softmax_cross_entropy instead.
+]
+[2023-12-21 22:19:19,784: INFO: Data_Preparation: Image-to-text model loaded]
+[2023-12-21 22:19:20,181: INFO: Main: >>>>>> stage Data Ingestion started <<<<<<]
+[2023-12-21 22:19:20,182: INFO: Main: >>>>>> stage Data Ingestion completed <<<<<<
+
+x==========x]
+[2023-12-21 22:19:20,183: INFO: Main: >>>>>> stage Data Validation started <<<<<<]
+[2023-12-21 22:19:20,184: INFO: Main: >>>>>> stage Data Validation completed <<<<<<
+
+x==========x]
+[2023-12-21 22:19:20,184: INFO: Main: >>>>>> stage Data Preparation started <<<<<<]
+[2023-12-21 22:19:20,187: INFO: Main: >>>>>> stage Data Preparation completed <<<<<<
+
+x==========x]
+[2023-12-21 22:19:20,196: INFO: Main: >>>>>> stage Feature Extraction started <<<<<<]
+[2023-12-21 22:19:20,227: INFO: Utils: yaml file: Src\Config.yaml loaded successfully]
+[2023-12-21 22:19:20,244: INFO: Utils: yaml file: Src\Params.yaml loaded successfully]
+[2023-12-21 22:19:20,245: INFO: config: Getting Feature Extraction Configuration...]
+[2023-12-21 22:19:20,247: INFO: Feature_Extraction: Started Extracting train data features ....]
+[2023-12-21 22:19:20,249: INFO: Feature_Extraction: Getting Captions features...]
+[2023-12-21 22:19:20,313: INFO: Feature_Extraction: Building Tokenizer...]
+[2023-12-21 22:19:20,346: INFO: Feature_Extraction: Tokenizer saved at Artifacts/tokenizer.pkl]
+[2023-12-21 22:19:20,349: INFO: Feature_Extraction: Building Text Sequences...]
+[2023-12-21 22:19:20,367: INFO: Feature_Extraction: Padding Sequences with 100 max length...]
+[2023-12-21 22:19:20,431: INFO: Feature_Extraction: Captions feature extraction completed!]
+[2023-12-21 22:19:20,436: INFO: Feature_Extraction: Getting Image features...]
+[2023-12-21 22:19:20,449: INFO: Feature_Extraction: Getting Image features using VGG19]
+[2023-12-21 22:19:20,467: INFO: Feature_Extraction: Getting Appropriate train images for feature extraction..]
+[2023-12-21 22:19:20,999: WARNING: module_wrapper: From C:\Users\hp\Desktop\Voice-Inspired-Object-Vision\Project-Environment\lib\site-packages\keras\src\backend.py:1398: The name tf.executing_eagerly_outside_functions is deprecated. Please use tf.compat.v1.executing_eagerly_outside_functions instead.
+]
+[2023-12-21 22:19:21,370: WARNING: module_wrapper: From C:\Users\hp\Desktop\Voice-Inspired-Object-Vision\Project-Environment\lib\site-packages\keras\src\layers\pooling\max_pooling2d.py:161: The name tf.nn.max_pool is deprecated. Please use tf.nn.max_pool2d instead.
+]
+[2023-12-21 22:19:23,123: INFO: Feature_Extraction: Image Feature extraction Completed!]
+[2023-12-21 22:19:23,129: INFO: Feature_Extraction: Images feature extraction completed!]
+[2023-12-21 22:19:23,130: INFO: Feature_Extraction: Getting BB annotations features...]
+[2023-12-21 22:19:23,202: INFO: Feature_Extraction: Standardizing BB annotations label...]
+[2023-12-21 22:19:23,232: INFO: Feature_Extraction: Standardizer saved at Artifacts/StandardScaler.pkl]
+[2023-12-21 22:19:23,233: INFO: Feature_Extraction: BB Annotations feature extraction completed!]
+[2023-12-21 22:19:23,243: INFO: Feature_Extraction: train image_features saved at Artifacts/train/image_features.pkl]
+[2023-12-21 22:19:23,251: INFO: Feature_Extraction: train bb_labels saved at Artifacts/train/bb_labels.pkl]
+[2023-12-21 22:19:23,265: INFO: Feature_Extraction: train text_sequences saved at Artifacts/train/text_sequences.pkl]
+[2023-12-21 22:19:23,272: INFO: Feature_Extraction: train data feature extraction completed!]
+[2023-12-21 22:19:23,278: INFO: Feature_Extraction: Started Extracting validation" data features ....]
+[2023-12-21 22:19:23,293: INFO: Feature_Extraction: Getting Captions features...]
+[2023-12-21 22:19:23,309: ERROR: Main: [Errno 22] Invalid argument: 'Artifacts\\validation"\\captions\\captions.csv']
+Traceback (most recent call last):
+  File "C:\Users\hp\Desktop\Voice-Inspired-Object-Vision\Src\Main.py", line 54, in <module>
+    Feature_extractiion_training_pipeline.start()
+  File "C:\Users\hp\Desktop\Voice-Inspired-Object-Vision\Src\Pipelines\stage_04_feature_extraction.py", line 23, in start
+    feature_extraction.extract_features()
+  File "C:\Users\hp\Desktop\Voice-Inspired-Object-Vision\Src\Components\Feature_Extraction.py", line 156, in extract_features
+    image_features,text_sequences,bb_labels = self.get_data_features(set_type = set_type)
+  File "C:\Users\hp\Desktop\Voice-Inspired-Object-Vision\Src\Components\Feature_Extraction.py", line 117, in get_data_features
+    text_data = pd.read_csv(caption_csv)
+  File "C:\Users\hp\Desktop\Voice-Inspired-Object-Vision\Project-Environment\lib\site-packages\pandas\io\parsers\readers.py", line 948, in read_csv
+    return _read(filepath_or_buffer, kwds)
+  File "C:\Users\hp\Desktop\Voice-Inspired-Object-Vision\Project-Environment\lib\site-packages\pandas\io\parsers\readers.py", line 611, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+  File "C:\Users\hp\Desktop\Voice-Inspired-Object-Vision\Project-Environment\lib\site-packages\pandas\io\parsers\readers.py", line 1448, in __init__
+    self._engine = self._make_engine(f, self.engine)
+  File "C:\Users\hp\Desktop\Voice-Inspired-Object-Vision\Project-Environment\lib\site-packages\pandas\io\parsers\readers.py", line 1705, in _make_engine
+    self.handles = get_handle(
+  File "C:\Users\hp\Desktop\Voice-Inspired-Object-Vision\Project-Environment\lib\site-packages\pandas\io\common.py", line 863, in get_handle
+    handle = open(
+OSError: [Errno 22] Invalid argument: 'Artifacts\\validation"\\captions\\captions.csv'
+[2023-12-21 22:22:51,616: WARNING: module_wrapper: From C:\Users\hp\Desktop\Voice-Inspired-Object-Vision\Project-Environment\lib\site-packages\keras\src\losses.py:2976: The name tf.losses.sparse_softmax_cross_entropy is deprecated. Please use tf.compat.v1.losses.sparse_softmax_cross_entropy instead.
+]
+[2023-12-21 22:22:56,768: INFO: Data_Preparation: Image-to-text model loaded]
+[2023-12-21 22:22:56,980: INFO: Main: >>>>>> stage Data Ingestion started <<<<<<]
+[2023-12-21 22:22:56,980: INFO: Main: >>>>>> stage Data Ingestion completed <<<<<<
+
+x==========x]
+[2023-12-21 22:22:56,980: INFO: Main: >>>>>> stage Data Validation started <<<<<<]
+[2023-12-21 22:22:56,980: INFO: Main: >>>>>> stage Data Validation completed <<<<<<
+
+x==========x]
+[2023-12-21 22:22:56,981: INFO: Main: >>>>>> stage Data Preparation started <<<<<<]
+[2023-12-21 22:22:56,981: INFO: Main: >>>>>> stage Data Preparation completed <<<<<<
+
+x==========x]
+[2023-12-21 22:22:56,982: INFO: Main: >>>>>> stage Feature Extraction started <<<<<<]
+[2023-12-21 22:22:56,996: INFO: Utils: yaml file: Src\Config.yaml loaded successfully]
+[2023-12-21 22:22:57,192: INFO: Utils: yaml file: Src\Params.yaml loaded successfully]
+[2023-12-21 22:22:57,193: INFO: config: Getting Feature Extraction Configuration...]
+[2023-12-21 22:22:57,198: INFO: Feature_Extraction: Started Extracting train data features ....]
+[2023-12-21 22:22:57,199: INFO: Feature_Extraction: Getting Captions features...]
+[2023-12-21 22:22:57,230: INFO: Feature_Extraction: Building Tokenizer...]
+[2023-12-21 22:22:57,246: INFO: Feature_Extraction: Tokenizer saved at Artifacts/tokenizer.pkl]
+[2023-12-21 22:22:57,247: INFO: Feature_Extraction: Building Text Sequences...]
+[2023-12-21 22:22:57,258: INFO: Feature_Extraction: Padding Sequences with 100 max length...]
+[2023-12-21 22:22:57,265: INFO: Feature_Extraction: Captions feature extraction completed!]
+[2023-12-21 22:22:57,266: INFO: Feature_Extraction: Getting Image features...]
+[2023-12-21 22:22:57,266: INFO: Feature_Extraction: Getting Image features using VGG19]
+[2023-12-21 22:22:57,275: INFO: Feature_Extraction: Getting Appropriate train images for feature extraction..]
+[2023-12-21 22:22:57,706: WARNING: module_wrapper: From C:\Users\hp\Desktop\Voice-Inspired-Object-Vision\Project-Environment\lib\site-packages\keras\src\backend.py:1398: The name tf.executing_eagerly_outside_functions is deprecated. Please use tf.compat.v1.executing_eagerly_outside_functions instead.
+]
+[2023-12-21 22:22:58,083: WARNING: module_wrapper: From C:\Users\hp\Desktop\Voice-Inspired-Object-Vision\Project-Environment\lib\site-packages\keras\src\layers\pooling\max_pooling2d.py:161: The name tf.nn.max_pool is deprecated. Please use tf.nn.max_pool2d instead.
+]
+[2023-12-21 22:22:59,550: INFO: Feature_Extraction: Image Feature extraction Completed!]
+[2023-12-21 22:22:59,551: INFO: Feature_Extraction: Images feature extraction completed!]
+[2023-12-21 22:22:59,552: INFO: Feature_Extraction: Getting BB annotations features...]
+[2023-12-21 22:22:59,558: INFO: Feature_Extraction: Standardizing BB annotations label...]
+[2023-12-21 22:22:59,579: INFO: Feature_Extraction: Standardizer saved at Artifacts/StandardScaler.pkl]
+[2023-12-21 22:22:59,580: INFO: Feature_Extraction: BB Annotations feature extraction completed!]
+[2023-12-21 22:22:59,584: INFO: Feature_Extraction: train image_features saved at Artifacts/train/image_features.pkl]
+[2023-12-21 22:22:59,587: INFO: Feature_Extraction: train bb_labels saved at Artifacts/train/bb_labels.pkl]
+[2023-12-21 22:22:59,590: INFO: Feature_Extraction: train text_sequences saved at Artifacts/train/text_sequences.pkl]
+[2023-12-21 22:22:59,590: INFO: Feature_Extraction: train data feature extraction completed!]
+[2023-12-21 22:22:59,591: INFO: Feature_Extraction: Started Extracting validation data features ....]
+[2023-12-21 22:22:59,592: INFO: Feature_Extraction: Getting Captions features...]
+[2023-12-21 22:22:59,634: INFO: Feature_Extraction: Building Tokenizer...]
+[2023-12-21 22:22:59,641: INFO: Feature_Extraction: Tokenizer saved at Artifacts/tokenizer.pkl]
+[2023-12-21 22:22:59,642: INFO: Feature_Extraction: Building Text Sequences...]
+[2023-12-21 22:22:59,646: INFO: Feature_Extraction: Padding Sequences with 100 max length...]
+[2023-12-21 22:22:59,653: INFO: Feature_Extraction: Captions feature extraction completed!]
+[2023-12-21 22:22:59,654: INFO: Feature_Extraction: Getting Image features...]
+[2023-12-21 22:22:59,655: INFO: Feature_Extraction: Getting Image features using VGG19]
+[2023-12-21 22:22:59,658: INFO: Feature_Extraction: Getting Appropriate train images for feature extraction..]
+[2023-12-21 22:23:00,848: INFO: Feature_Extraction: Image Feature extraction Completed!]
+[2023-12-21 22:23:00,849: INFO: Feature_Extraction: Images feature extraction completed!]
+[2023-12-21 22:23:00,849: INFO: Feature_Extraction: Getting BB annotations features...]
+[2023-12-21 22:23:00,870: INFO: Feature_Extraction: Standardizing BB annotations label...]
+[2023-12-21 22:23:00,878: INFO: Feature_Extraction: Standardizer saved at Artifacts/StandardScaler.pkl]
+[2023-12-21 22:23:00,881: INFO: Feature_Extraction: BB Annotations feature extraction completed!]
+[2023-12-21 22:23:00,885: INFO: Feature_Extraction: validation image_features saved at Artifacts/validation/image_features.pkl]
+[2023-12-21 22:23:00,887: INFO: Feature_Extraction: validation bb_labels saved at Artifacts/validation/bb_labels.pkl]
+[2023-12-21 22:23:00,890: INFO: Feature_Extraction: validation text_sequences saved at Artifacts/validation/text_sequences.pkl]
+[2023-12-21 22:23:00,891: INFO: Feature_Extraction: validation data feature extraction completed!]
+[2023-12-21 22:23:00,891: INFO: Main: >>>>>> stage Feature Extraction completed <<<<<<
+
+x==========x]
+[2023-12-21 22:23:00,892: INFO: Main: >>>>>> stage Model Architecture Developement started <<<<<<]
+[2023-12-21 22:23:00,907: INFO: Utils: yaml file: Src\Config.yaml loaded successfully]
+[2023-12-21 22:23:00,914: INFO: Utils: yaml file: Src\Params.yaml loaded successfully]
+[2023-12-21 22:23:00,915: INFO: config: Getting Model Architecture Configuration...]
+[2023-12-21 22:23:00,916: INFO: Model_Architecture: Model Build in progress..]
+[2023-12-21 22:23:01,574: INFO: Model_Architecture: Model Successfully Builted!]
+[2023-12-21 22:23:02,435: INFO: Model_Architecture: Model saved at Artifacts/VIOV_Model.pkl]
+[2023-12-21 22:23:02,435: INFO: Main: >>>>>> stage Model Architecture Developement completed <<<<<<
+
+x==========x]
+[2023-12-21 22:23:02,436: INFO: Main: >>>>>> stage Model Callbacks started <<<<<<]
+[2023-12-21 22:23:02,449: INFO: Utils: yaml file: Src\Config.yaml loaded successfully]
+[2023-12-21 22:23:02,455: INFO: Utils: yaml file: Src\Params.yaml loaded successfully]
+[2023-12-21 22:23:02,456: INFO: config: Getting Model Callbacks Configuration...]
+[2023-12-21 22:23:02,457: INFO: Model_Callbacks: Building Model Callbacks...]
+[2023-12-21 22:23:02,461: INFO: Model_Callbacks: Model callbacks saved at Artifacts/callbacks.pkl]
+[2023-12-21 22:23:02,462: INFO: Main: >>>>>> stage Model Callbacks completed <<<<<<
+
+x==========x]
+[2023-12-21 22:23:02,464: INFO: Main: >>>>>> stage Model Callbacks started <<<<<<]
+[2023-12-21 22:23:02,480: INFO: Utils: yaml file: Src\Config.yaml loaded successfully]
+[2023-12-21 22:23:02,486: INFO: Utils: yaml file: Src\Params.yaml loaded successfully]
+[2023-12-21 22:23:02,488: INFO: config: Getting Model Training configuration...]
+[2023-12-21 22:23:02,489: INFO: Model_Training: Loading Training Data...]
+[2023-12-21 22:23:02,555: INFO: Model_Training: Training Data Successfully Loaded!]
+[2023-12-21 22:23:02,555: INFO: Model_Training: Loading Validation Data...]
+[2023-12-21 22:23:02,590: INFO: Model_Training: Validation Data Successfully Loaded!]
+[2023-12-21 22:23:02,591: INFO: Model_Training: Loading Model from Artifacts/VIOV_Model.pkl ...]
+[2023-12-21 22:23:57,890: WARNING: optimizer: Skipping variable loading for optimizer 'Adam', because it has 59 variables whereas the saved optimizer has 1 variables. ]
+[2023-12-21 22:24:58,511: INFO: Model_Training: Model Successfully loaded!]
+[2023-12-21 22:24:58,512: INFO: Model_Training: Model Callbacks loading from Artifacts/callbacks.pkl...]
+[2023-12-21 22:24:58,626: INFO: Model_Training: Model Callbacks Successfully loaded!]
+[2023-12-21 22:24:58,627: INFO: Model_Training: Model Training Started...]
+[2023-12-21 22:24:58,651: ERROR: Main: Training data contains 0 samples, which is not sufficient to split it into a validation and training set as specified by `validation_split=0.3`. Either provide more data, or a different value for the `validation_split` argument.]
+Traceback (most recent call last):
+  File "C:\Users\hp\Desktop\Voice-Inspired-Object-Vision\Src\Main.py", line 88, in <module>
+    model_training_pipeline.start()
+  File "C:\Users\hp\Desktop\Voice-Inspired-Object-Vision\Src\Pipelines\stage_07_model_training.py", line 23, in start
+    model_trainer.train_model()
+  File "C:\Users\hp\Desktop\Voice-Inspired-Object-Vision\Src\Components\Model_Training.py", line 72, in train_model
+    model_history = model.fit(x = train_x, y = train_y, epochs = self.EPOCHS, batch_size = self.BATCH_SIZE,
+  File "C:\Users\hp\Desktop\Voice-Inspired-Object-Vision\Project-Environment\lib\site-packages\keras\src\utils\traceback_utils.py", line 70, in error_handler
+    raise e.with_traceback(filtered_tb) from None
+  File "C:\Users\hp\Desktop\Voice-Inspired-Object-Vision\Project-Environment\lib\site-packages\keras\src\engine\data_adapter.py", line 1795, in train_validation_split
+    raise ValueError(
+ValueError: Training data contains 0 samples, which is not sufficient to split it into a validation and training set as specified by `validation_split=0.3`. Either provide more data, or a different value for the `validation_split` argument.
+[2023-12-21 22:26:59,458: WARNING: module_wrapper: From C:\Users\hp\Desktop\Voice-Inspired-Object-Vision\Project-Environment\lib\site-packages\keras\src\losses.py:2976: The name tf.losses.sparse_softmax_cross_entropy is deprecated. Please use tf.compat.v1.losses.sparse_softmax_cross_entropy instead.
+]
+[2023-12-21 22:27:04,380: INFO: Data_Preparation: Image-to-text model loaded]
+[2023-12-21 22:27:04,687: INFO: Main: >>>>>> stage Data Ingestion started <<<<<<]
+[2023-12-21 22:27:04,687: INFO: Main: >>>>>> stage Data Ingestion completed <<<<<<
+
+x==========x]
+[2023-12-21 22:27:04,687: INFO: Main: >>>>>> stage Data Validation started <<<<<<]
+[2023-12-21 22:27:04,688: INFO: Main: >>>>>> stage Data Validation completed <<<<<<
+
+x==========x]
+[2023-12-21 22:27:04,688: INFO: Main: >>>>>> stage Data Preparation started <<<<<<]
+[2023-12-21 22:27:04,689: INFO: Main: >>>>>> stage Data Preparation completed <<<<<<
+
+x==========x]
+[2023-12-21 22:27:04,689: INFO: Main: >>>>>> stage Feature Extraction started <<<<<<]
+[2023-12-21 22:27:04,703: INFO: Utils: yaml file: Src\Config.yaml loaded successfully]
+[2023-12-21 22:27:04,711: INFO: Utils: yaml file: Src\Params.yaml loaded successfully]
+[2023-12-21 22:27:04,712: INFO: config: Getting Feature Extraction Configuration...]
+[2023-12-21 22:27:04,714: INFO: Feature_Extraction: Started Extracting train data features ....]
+[2023-12-21 22:27:04,715: INFO: Feature_Extraction: Getting Captions features...]
+[2023-12-21 22:27:04,770: INFO: Feature_Extraction: Building Tokenizer...]
+[2023-12-21 22:27:04,784: INFO: Feature_Extraction: Tokenizer saved at Artifacts/tokenizer.pkl]
+[2023-12-21 22:27:04,788: INFO: Feature_Extraction: Building Text Sequences...]
+[2023-12-21 22:27:04,800: INFO: Feature_Extraction: Padding Sequences with 100 max length...]
+[2023-12-21 22:27:04,807: INFO: Feature_Extraction: Captions feature extraction completed!]
+[2023-12-21 22:27:04,808: INFO: Feature_Extraction: Getting Image features...]
+[2023-12-21 22:27:04,808: INFO: Feature_Extraction: Getting Image features using VGG19]
+[2023-12-21 22:27:04,816: INFO: Feature_Extraction: Getting Appropriate train images for feature extraction..]
+[2023-12-21 22:27:05,331: WARNING: module_wrapper: From C:\Users\hp\Desktop\Voice-Inspired-Object-Vision\Project-Environment\lib\site-packages\keras\src\backend.py:1398: The name tf.executing_eagerly_outside_functions is deprecated. Please use tf.compat.v1.executing_eagerly_outside_functions instead.
+]
+[2023-12-21 22:27:05,619: WARNING: module_wrapper: From C:\Users\hp\Desktop\Voice-Inspired-Object-Vision\Project-Environment\lib\site-packages\keras\src\layers\pooling\max_pooling2d.py:161: The name tf.nn.max_pool is deprecated. Please use tf.nn.max_pool2d instead.
+]
+[2023-12-21 22:27:06,990: INFO: Feature_Extraction: Image Feature extraction Completed!]
+[2023-12-21 22:27:06,991: INFO: Feature_Extraction: Images feature extraction completed!]
+[2023-12-21 22:27:06,992: INFO: Feature_Extraction: Getting BB annotations features...]
+[2023-12-21 22:27:06,998: INFO: Feature_Extraction: Standardizing BB annotations label...]
+[2023-12-21 22:27:07,011: INFO: Feature_Extraction: Standardizer saved at Artifacts/StandardScaler.pkl]
+[2023-12-21 22:27:07,012: INFO: Feature_Extraction: BB Annotations feature extraction completed!]
+[2023-12-21 22:27:07,017: INFO: Feature_Extraction: train image_features saved at Artifacts/train/image_features.pkl]
+[2023-12-21 22:27:07,021: INFO: Feature_Extraction: train bb_labels saved at Artifacts/train/bb_labels.pkl]
+[2023-12-21 22:27:07,025: INFO: Feature_Extraction: train text_sequences saved at Artifacts/train/text_sequences.pkl]
+[2023-12-21 22:27:07,025: INFO: Feature_Extraction: train data feature extraction completed!]
+[2023-12-21 22:27:07,026: INFO: Feature_Extraction: Started Extracting validation data features ....]
+[2023-12-21 22:27:07,027: INFO: Feature_Extraction: Getting Captions features...]
+[2023-12-21 22:27:07,033: INFO: Feature_Extraction: Building Tokenizer...]
+[2023-12-21 22:27:07,041: INFO: Feature_Extraction: Tokenizer saved at Artifacts/tokenizer.pkl]
+[2023-12-21 22:27:07,041: INFO: Feature_Extraction: Building Text Sequences...]
+[2023-12-21 22:27:07,044: INFO: Feature_Extraction: Padding Sequences with 100 max length...]
+[2023-12-21 22:27:07,045: INFO: Feature_Extraction: Captions feature extraction completed!]
+[2023-12-21 22:27:07,046: INFO: Feature_Extraction: Getting Image features...]
+[2023-12-21 22:27:07,048: INFO: Feature_Extraction: Getting Image features using VGG19]
+[2023-12-21 22:27:07,052: INFO: Feature_Extraction: Getting Appropriate train images for feature extraction..]
+[2023-12-21 22:27:08,260: INFO: Feature_Extraction: Image Feature extraction Completed!]
+[2023-12-21 22:27:08,262: INFO: Feature_Extraction: Images feature extraction completed!]
+[2023-12-21 22:27:08,262: INFO: Feature_Extraction: Getting BB annotations features...]
+[2023-12-21 22:27:08,264: INFO: Feature_Extraction: Standardizing BB annotations label...]
+[2023-12-21 22:27:08,272: INFO: Feature_Extraction: Standardizer saved at Artifacts/StandardScaler.pkl]
+[2023-12-21 22:27:08,273: INFO: Feature_Extraction: BB Annotations feature extraction completed!]
+[2023-12-21 22:27:08,276: INFO: Feature_Extraction: validation image_features saved at Artifacts/validation/image_features.pkl]
+[2023-12-21 22:27:08,279: INFO: Feature_Extraction: validation bb_labels saved at Artifacts/validation/bb_labels.pkl]
+[2023-12-21 22:27:08,282: INFO: Feature_Extraction: validation text_sequences saved at Artifacts/validation/text_sequences.pkl]
+[2023-12-21 22:27:08,283: INFO: Feature_Extraction: validation data feature extraction completed!]
+[2023-12-21 22:27:08,286: INFO: Main: >>>>>> stage Feature Extraction completed <<<<<<
+
+x==========x]
+[2023-12-21 22:27:08,297: INFO: Main: >>>>>> stage Model Architecture Developement started <<<<<<]
+[2023-12-21 22:27:08,314: INFO: Utils: yaml file: Src\Config.yaml loaded successfully]
+[2023-12-21 22:27:08,324: INFO: Utils: yaml file: Src\Params.yaml loaded successfully]
+[2023-12-21 22:27:08,326: INFO: config: Getting Model Architecture Configuration...]
+[2023-12-21 22:27:08,326: INFO: Model_Architecture: Model Build in progress..]
+[2023-12-21 22:27:09,156: INFO: Model_Architecture: Model Successfully Builted!]
+[2023-12-21 22:27:09,772: INFO: Model_Architecture: Model saved at Artifacts/VIOV_Model.pkl]
+[2023-12-21 22:27:09,773: INFO: Main: >>>>>> stage Model Architecture Developement completed <<<<<<
+
+x==========x]
+[2023-12-21 22:27:09,773: INFO: Main: >>>>>> stage Model Callbacks started <<<<<<]
+[2023-12-21 22:27:09,786: INFO: Utils: yaml file: Src\Config.yaml loaded successfully]
+[2023-12-21 22:27:09,794: INFO: Utils: yaml file: Src\Params.yaml loaded successfully]
+[2023-12-21 22:27:09,795: INFO: config: Getting Model Callbacks Configuration...]
+[2023-12-21 22:27:09,795: INFO: Model_Callbacks: Building Model Callbacks...]
+[2023-12-21 22:27:09,799: INFO: Model_Callbacks: Model callbacks saved at Artifacts/callbacks.pkl]
+[2023-12-21 22:27:09,800: INFO: Main: >>>>>> stage Model Callbacks completed <<<<<<
+
+x==========x]
+[2023-12-21 22:27:09,801: INFO: Main: >>>>>> stage Model Callbacks started <<<<<<]
+[2023-12-21 22:27:09,814: INFO: Utils: yaml file: Src\Config.yaml loaded successfully]
+[2023-12-21 22:27:09,820: INFO: Utils: yaml file: Src\Params.yaml loaded successfully]
+[2023-12-21 22:27:09,821: INFO: config: Getting Model Training configuration...]
+[2023-12-21 22:27:09,822: INFO: Model_Training: Loading Training Data...]
+[2023-12-21 22:27:09,888: INFO: Model_Training: Training Data Successfully Loaded!]
+[2023-12-21 22:27:09,889: INFO: Model_Training: Loading Validation Data...]
+[2023-12-21 22:27:09,923: INFO: Model_Training: Validation Data Successfully Loaded!]
+[2023-12-21 22:27:09,924: INFO: Model_Training: Loading Model from Artifacts/VIOV_Model.pkl ...]
+[2023-12-21 22:28:14,515: WARNING: optimizer: Skipping variable loading for optimizer 'Adam', because it has 59 variables whereas the saved optimizer has 1 variables. ]
+[2023-12-21 22:29:05,655: WARNING: module_wrapper: From C:\Users\hp\Desktop\Voice-Inspired-Object-Vision\Project-Environment\lib\site-packages\keras\src\losses.py:2976: The name tf.losses.sparse_softmax_cross_entropy is deprecated. Please use tf.compat.v1.losses.sparse_softmax_cross_entropy instead.
+]
+[2023-12-21 22:29:09,585: INFO: Data_Preparation: Image-to-text model loaded]
+[2023-12-21 22:29:09,762: INFO: Main: >>>>>> stage Data Ingestion started <<<<<<]
+[2023-12-21 22:29:09,762: INFO: Main: >>>>>> stage Data Ingestion completed <<<<<<
+
+x==========x]
+[2023-12-21 22:29:09,762: INFO: Main: >>>>>> stage Data Validation started <<<<<<]
+[2023-12-21 22:29:09,762: INFO: Main: >>>>>> stage Data Validation completed <<<<<<
+
+x==========x]
+[2023-12-21 22:29:09,763: INFO: Main: >>>>>> stage Data Preparation started <<<<<<]
+[2023-12-21 22:29:09,763: INFO: Main: >>>>>> stage Data Preparation completed <<<<<<
+
+x==========x]
+[2023-12-21 22:29:09,764: INFO: Main: >>>>>> stage Feature Extraction started <<<<<<]
+[2023-12-21 22:29:09,774: INFO: Utils: yaml file: Src\Config.yaml loaded successfully]
+[2023-12-21 22:29:09,782: INFO: Utils: yaml file: Src\Params.yaml loaded successfully]
+[2023-12-21 22:29:09,783: INFO: config: Getting Feature Extraction Configuration...]
+[2023-12-21 22:29:09,785: INFO: Feature_Extraction: Started Extracting train data features ....]
+[2023-12-21 22:29:09,785: INFO: Feature_Extraction: Getting Captions features...]
+[2023-12-21 22:29:09,821: INFO: Feature_Extraction: Building Tokenizer...]
+[2023-12-21 22:29:09,844: INFO: Feature_Extraction: Tokenizer saved at Artifacts/tokenizer.pkl]
+[2023-12-21 22:29:09,844: INFO: Feature_Extraction: Building Text Sequences...]
+[2023-12-21 22:29:09,860: INFO: Feature_Extraction: Padding Sequences with 100 max length...]
+[2023-12-21 22:29:09,868: INFO: Feature_Extraction: Captions feature extraction completed!]
+[2023-12-21 22:29:09,869: INFO: Feature_Extraction: Getting Image features...]
+[2023-12-21 22:29:09,870: INFO: Feature_Extraction: Getting Image features using VGG19]
+[2023-12-21 22:29:09,876: INFO: Feature_Extraction: Getting Appropriate train images for feature extraction..]
+[2023-12-21 22:29:10,266: WARNING: module_wrapper: From C:\Users\hp\Desktop\Voice-Inspired-Object-Vision\Project-Environment\lib\site-packages\keras\src\backend.py:1398: The name tf.executing_eagerly_outside_functions is deprecated. Please use tf.compat.v1.executing_eagerly_outside_functions instead.
+]
+[2023-12-21 22:29:10,548: WARNING: module_wrapper: From C:\Users\hp\Desktop\Voice-Inspired-Object-Vision\Project-Environment\lib\site-packages\keras\src\layers\pooling\max_pooling2d.py:161: The name tf.nn.max_pool is deprecated. Please use tf.nn.max_pool2d instead.
+]
+[2023-12-21 22:36:44,676: INFO: Feature_Extraction: Image Feature extraction Completed!]
+[2023-12-21 22:36:44,757: INFO: Feature_Extraction: Images feature extraction completed!]
+[2023-12-21 22:36:44,758: INFO: Feature_Extraction: Getting BB annotations features...]
+[2023-12-21 22:36:44,767: INFO: Feature_Extraction: Standardizing BB annotations label...]
+[2023-12-21 22:36:44,802: INFO: Feature_Extraction: Standardizer saved at Artifacts/StandardScaler.pkl]
+[2023-12-21 22:36:44,804: INFO: Feature_Extraction: BB Annotations feature extraction completed!]
+[2023-12-21 22:36:45,329: INFO: Feature_Extraction: train image_features saved at Artifacts/train/image_features.pkl]
+[2023-12-21 22:36:45,333: INFO: Feature_Extraction: train bb_labels saved at Artifacts/train/bb_labels.pkl]
+[2023-12-21 22:36:45,339: INFO: Feature_Extraction: train text_sequences saved at Artifacts/train/text_sequences.pkl]
+[2023-12-21 22:36:45,340: INFO: Feature_Extraction: train data feature extraction completed!]
+[2023-12-21 22:36:45,341: INFO: Feature_Extraction: Started Extracting validation data features ....]
+[2023-12-21 22:36:45,342: INFO: Feature_Extraction: Getting Captions features...]
+[2023-12-21 22:36:45,354: INFO: Feature_Extraction: Building Tokenizer...]
+[2023-12-21 22:36:45,364: INFO: Feature_Extraction: Tokenizer saved at Artifacts/tokenizer.pkl]
+[2023-12-21 22:36:45,366: INFO: Feature_Extraction: Building Text Sequences...]
+[2023-12-21 22:36:45,375: INFO: Feature_Extraction: Padding Sequences with 100 max length...]
+[2023-12-21 22:36:45,383: INFO: Feature_Extraction: Captions feature extraction completed!]
+[2023-12-21 22:36:45,385: INFO: Feature_Extraction: Getting Image features...]
+[2023-12-21 22:36:45,387: INFO: Feature_Extraction: Getting Image features using VGG19]
+[2023-12-21 22:36:45,391: INFO: Feature_Extraction: Getting Appropriate train images for feature extraction..]
+[2023-12-21 22:39:09,828: INFO: Feature_Extraction: Image Feature extraction Completed!]
+[2023-12-21 22:39:09,847: INFO: Feature_Extraction: Images feature extraction completed!]
+[2023-12-21 22:39:09,848: INFO: Feature_Extraction: Getting BB annotations features...]
+[2023-12-21 22:39:09,851: INFO: Feature_Extraction: Standardizing BB annotations label...]
+[2023-12-21 22:39:09,861: INFO: Feature_Extraction: Standardizer saved at Artifacts/StandardScaler.pkl]
+[2023-12-21 22:39:09,865: INFO: Feature_Extraction: BB Annotations feature extraction completed!]
+[2023-12-21 22:39:09,920: INFO: Feature_Extraction: validation image_features saved at Artifacts/validation/image_features.pkl]
+[2023-12-21 22:39:09,924: INFO: Feature_Extraction: validation bb_labels saved at Artifacts/validation/bb_labels.pkl]
+[2023-12-21 22:39:09,931: INFO: Feature_Extraction: validation text_sequences saved at Artifacts/validation/text_sequences.pkl]
+[2023-12-21 22:39:09,932: INFO: Feature_Extraction: validation data feature extraction completed!]
+[2023-12-21 22:39:09,937: INFO: Main: >>>>>> stage Feature Extraction completed <<<<<<
+
+x==========x]
+[2023-12-21 22:39:09,938: INFO: Main: >>>>>> stage Model Architecture Developement started <<<<<<]
+[2023-12-21 22:39:09,955: INFO: Utils: yaml file: Src\Config.yaml loaded successfully]
+[2023-12-21 22:39:09,963: INFO: Utils: yaml file: Src\Params.yaml loaded successfully]
+[2023-12-21 22:39:09,967: INFO: config: Getting Model Architecture Configuration...]
+[2023-12-21 22:39:09,968: INFO: Model_Architecture: Model Build in progress..]
+[2023-12-21 22:39:10,788: INFO: Model_Architecture: Model Successfully Builted!]
+[2023-12-21 22:39:11,553: INFO: Model_Architecture: Model saved at Artifacts/VIOV_Model.pkl]
+[2023-12-21 22:39:11,570: INFO: Main: >>>>>> stage Model Architecture Developement completed <<<<<<
+
+x==========x]
+[2023-12-21 22:39:11,577: INFO: Main: >>>>>> stage Model Callbacks started <<<<<<]
+[2023-12-21 22:39:11,603: INFO: Utils: yaml file: Src\Config.yaml loaded successfully]
+[2023-12-21 22:39:11,623: INFO: Utils: yaml file: Src\Params.yaml loaded successfully]
+[2023-12-21 22:39:11,631: INFO: config: Getting Model Callbacks Configuration...]
+[2023-12-21 22:39:11,634: INFO: Model_Callbacks: Building Model Callbacks...]
+[2023-12-21 22:39:11,649: INFO: Model_Callbacks: Model callbacks saved at Artifacts/callbacks.pkl]
+[2023-12-21 22:39:11,650: INFO: Main: >>>>>> stage Model Callbacks completed <<<<<<
+
+x==========x]
+[2023-12-21 22:39:11,651: INFO: Main: >>>>>> stage Model Callbacks started <<<<<<]
+[2023-12-21 22:39:11,669: INFO: Utils: yaml file: Src\Config.yaml loaded successfully]
+[2023-12-21 22:39:11,682: INFO: Utils: yaml file: Src\Params.yaml loaded successfully]
+[2023-12-21 22:39:11,684: INFO: config: Getting Model Training configuration...]
+[2023-12-21 22:39:11,687: INFO: Model_Training: Loading Training Data...]
+[2023-12-21 22:39:11,766: INFO: Model_Training: Training Data Successfully Loaded!]
+[2023-12-21 22:39:11,767: INFO: Model_Training: Loading Validation Data...]
+[2023-12-21 22:39:11,829: INFO: Model_Training: Validation Data Successfully Loaded!]
+[2023-12-21 22:39:11,830: INFO: Model_Training: Loading Model from Artifacts/VIOV_Model.pkl ...]
+[2023-12-21 22:40:11,628: WARNING: optimizer: Skipping variable loading for optimizer 'Adam', because it has 59 variables whereas the saved optimizer has 1 variables. ]
+[2023-12-21 22:41:38,159: INFO: Model_Training: Model Successfully loaded!]
+[2023-12-21 22:41:38,161: INFO: Model_Training: Model Callbacks loading from Artifacts/callbacks.pkl...]
+[2023-12-21 22:41:38,275: INFO: Model_Training: Model Callbacks Successfully loaded!]
+[2023-12-21 22:41:38,276: INFO: Model_Training: Model Training Started...]
+[2023-12-21 22:41:38,278: ERROR: Main: Training data contains 0 samples, which is not sufficient to split it into a validation and training set as specified by `validation_split=0.3`. Either provide more data, or a different value for the `validation_split` argument.]
+Traceback (most recent call last):
+  File "C:\Users\hp\Desktop\Voice-Inspired-Object-Vision\Src\Main.py", line 88, in <module>
+    model_training_pipeline.start()
+  File "C:\Users\hp\Desktop\Voice-Inspired-Object-Vision\Src\Pipelines\stage_07_model_training.py", line 23, in start
+    model_trainer.train_model()
+  File "C:\Users\hp\Desktop\Voice-Inspired-Object-Vision\Src\Components\Model_Training.py", line 72, in train_model
+    model_history = model.fit(x = train_x, y = train_y, epochs = self.EPOCHS, batch_size = self.BATCH_SIZE,
+  File "C:\Users\hp\Desktop\Voice-Inspired-Object-Vision\Project-Environment\lib\site-packages\keras\src\utils\traceback_utils.py", line 70, in error_handler
+    raise e.with_traceback(filtered_tb) from None
+  File "C:\Users\hp\Desktop\Voice-Inspired-Object-Vision\Project-Environment\lib\site-packages\keras\src\engine\data_adapter.py", line 1795, in train_validation_split
+    raise ValueError(
+ValueError: Training data contains 0 samples, which is not sufficient to split it into a validation and training set as specified by `validation_split=0.3`. Either provide more data, or a different value for the `validation_split` argument.
+[2023-12-21 22:45:17,029: WARNING: module_wrapper: From C:\Users\hp\Desktop\Voice-Inspired-Object-Vision\Project-Environment\lib\site-packages\keras\src\losses.py:2976: The name tf.losses.sparse_softmax_cross_entropy is deprecated. Please use tf.compat.v1.losses.sparse_softmax_cross_entropy instead.
+]
+[2023-12-21 22:45:26,749: INFO: Data_Preparation: Image-to-text model loaded]
+[2023-12-21 22:45:27,235: INFO: Main: >>>>>> stage Data Ingestion started <<<<<<]
+[2023-12-21 22:45:27,236: INFO: Main: >>>>>> stage Data Ingestion completed <<<<<<
+
+x==========x]
+[2023-12-21 22:45:27,236: INFO: Main: >>>>>> stage Data Validation started <<<<<<]
+[2023-12-21 22:45:27,236: INFO: Main: >>>>>> stage Data Validation completed <<<<<<
+
+x==========x]
+[2023-12-21 22:45:27,236: INFO: Main: >>>>>> stage Data Preparation started <<<<<<]
+[2023-12-21 22:45:27,237: INFO: Main: >>>>>> stage Data Preparation completed <<<<<<
+
+x==========x]
+[2023-12-21 22:45:27,238: INFO: Main: >>>>>> stage Feature Extraction started <<<<<<]
+[2023-12-21 22:45:27,239: INFO: Main: >>>>>> stage Feature Extraction completed <<<<<<
+
+x==========x]
+[2023-12-21 22:45:27,240: INFO: Main: >>>>>> stage Model Architecture Developement started <<<<<<]
+[2023-12-21 22:45:27,240: INFO: Main: >>>>>> stage Model Architecture Developement completed <<<<<<
+
+x==========x]
+[2023-12-21 22:45:27,242: INFO: Main: >>>>>> stage Model Callbacks started <<<<<<]
+[2023-12-21 22:45:27,243: INFO: Main: >>>>>> stage Model Callbacks completed <<<<<<
+
+x==========x]
+[2023-12-21 22:45:27,244: INFO: Main: >>>>>> stage Model Callbacks started <<<<<<]
+[2023-12-21 22:45:27,267: INFO: Utils: yaml file: Src\Config.yaml loaded successfully]
+[2023-12-21 22:45:27,279: INFO: Utils: yaml file: Src\Params.yaml loaded successfully]
+[2023-12-21 22:45:27,281: INFO: config: Getting Model Training configuration...]
+[2023-12-21 22:45:27,285: INFO: Model_Training: Loading Training Data...]
+[2023-12-21 22:45:27,305: INFO: Model_Training: Training Data Successfully Loaded!]
+[2023-12-21 22:45:27,309: INFO: Model_Training: Loading Validation Data...]
+[2023-12-21 22:45:27,323: INFO: Model_Training: Validation Data Successfully Loaded!]
+[2023-12-21 22:45:27,325: INFO: Model_Training: Loading Model from Artifacts/VIOV_Model.pkl ...]
+[2023-12-21 22:45:42,449: WARNING: module_wrapper: From C:\Users\hp\Desktop\Voice-Inspired-Object-Vision\Project-Environment\lib\site-packages\keras\src\backend.py:1398: The name tf.executing_eagerly_outside_functions is deprecated. Please use tf.compat.v1.executing_eagerly_outside_functions instead.
+]
+[2023-12-21 22:46:27,301: WARNING: optimizer: Skipping variable loading for optimizer 'Adam', because it has 59 variables whereas the saved optimizer has 1 variables. ]
+[2023-12-21 22:47:54,585: INFO: Model_Training: Model Successfully loaded!]
+[2023-12-21 22:47:54,586: INFO: Model_Training: Model Callbacks loading from Artifacts/callbacks.pkl...]
+[2023-12-21 22:47:54,601: INFO: Model_Training: Model Callbacks Successfully loaded!]
+[2023-12-21 22:47:54,602: INFO: Model_Training: Model Training Started...]
+[2023-12-21 22:47:54,613: ERROR: Main: Training data contains 0 samples, which is not sufficient to split it into a validation and training set as specified by `validation_split=0.3`. Either provide more data, or a different value for the `validation_split` argument.]
+Traceback (most recent call last):
+  File "C:\Users\hp\Desktop\Voice-Inspired-Object-Vision\Src\Main.py", line 88, in <module>
+    model_training_pipeline.start()
+  File "C:\Users\hp\Desktop\Voice-Inspired-Object-Vision\Src\Pipelines\stage_07_model_training.py", line 23, in start
+    model_trainer.train_model()
+  File "C:\Users\hp\Desktop\Voice-Inspired-Object-Vision\Src\Components\Model_Training.py", line 72, in train_model
+    model_history = model.fit(x = train_x, y = train_y, epochs = self.EPOCHS, batch_size = self.BATCH_SIZE,
+  File "C:\Users\hp\Desktop\Voice-Inspired-Object-Vision\Project-Environment\lib\site-packages\keras\src\utils\traceback_utils.py", line 70, in error_handler
+    raise e.with_traceback(filtered_tb) from None
+  File "C:\Users\hp\Desktop\Voice-Inspired-Object-Vision\Project-Environment\lib\site-packages\keras\src\engine\data_adapter.py", line 1795, in train_validation_split
+    raise ValueError(
+ValueError: Training data contains 0 samples, which is not sufficient to split it into a validation and training set as specified by `validation_split=0.3`. Either provide more data, or a different value for the `validation_split` argument.
+[2023-12-21 22:49:24,200: WARNING: module_wrapper: From C:\Users\hp\Desktop\Voice-Inspired-Object-Vision\Project-Environment\lib\site-packages\keras\src\losses.py:2976: The name tf.losses.sparse_softmax_cross_entropy is deprecated. Please use tf.compat.v1.losses.sparse_softmax_cross_entropy instead.
+]
+[2023-12-21 22:49:38,200: INFO: Data_Preparation: Image-to-text model loaded]
+[2023-12-21 22:49:38,630: INFO: Main: >>>>>> stage Data Ingestion started <<<<<<]
+[2023-12-21 22:49:38,631: INFO: Main: >>>>>> stage Data Ingestion completed <<<<<<
+
+x==========x]
+[2023-12-21 22:49:38,631: INFO: Main: >>>>>> stage Data Validation started <<<<<<]
+[2023-12-21 22:49:38,632: INFO: Main: >>>>>> stage Data Validation completed <<<<<<
+
+x==========x]
+[2023-12-21 22:49:38,632: INFO: Main: >>>>>> stage Data Preparation started <<<<<<]
+[2023-12-21 22:49:38,633: INFO: Main: >>>>>> stage Data Preparation completed <<<<<<
+
+x==========x]
+[2023-12-21 22:49:38,637: INFO: Main: >>>>>> stage Feature Extraction started <<<<<<]
+[2023-12-21 22:49:38,638: INFO: Main: >>>>>> stage Feature Extraction completed <<<<<<
+
+x==========x]
+[2023-12-21 22:49:38,640: INFO: Main: >>>>>> stage Model Architecture Developement started <<<<<<]
+[2023-12-21 22:49:38,642: INFO: Main: >>>>>> stage Model Architecture Developement completed <<<<<<
+
+x==========x]
+[2023-12-21 22:49:38,646: INFO: Main: >>>>>> stage Model Callbacks started <<<<<<]
+[2023-12-21 22:49:38,648: INFO: Main: >>>>>> stage Model Callbacks completed <<<<<<
+
+x==========x]
+[2023-12-21 22:49:38,652: INFO: Main: >>>>>> stage Model Callbacks started <<<<<<]
+[2023-12-21 22:49:38,672: INFO: Utils: yaml file: Src\Config.yaml loaded successfully]
+[2023-12-21 22:49:38,690: INFO: Utils: yaml file: Src\Params.yaml loaded successfully]
+[2023-12-21 22:49:38,691: INFO: config: Getting Model Training configuration...]
+[2023-12-21 22:49:38,694: INFO: Model_Training: Loading Training Data...]
+[2023-12-21 22:49:38,724: INFO: Model_Training: Training Data Successfully Loaded!]
+[2023-12-21 22:49:38,727: INFO: Model_Training: Loading Validation Data...]
+[2023-12-21 22:49:38,744: INFO: Model_Training: Validation Data Successfully Loaded!]
+[2023-12-21 22:49:38,758: INFO: Model_Training: Loading Model from Artifacts/VIOV_Model.pkl ...]
+[2023-12-21 22:49:53,003: WARNING: module_wrapper: From C:\Users\hp\Desktop\Voice-Inspired-Object-Vision\Project-Environment\lib\site-packages\keras\src\backend.py:1398: The name tf.executing_eagerly_outside_functions is deprecated. Please use tf.compat.v1.executing_eagerly_outside_functions instead.
+]
+[2023-12-21 22:50:36,971: WARNING: optimizer: Skipping variable loading for optimizer 'Adam', because it has 59 variables whereas the saved optimizer has 1 variables. ]
+[2023-12-21 22:52:07,963: INFO: Model_Training: Model Successfully loaded!]
+[2023-12-21 22:52:07,965: INFO: Model_Training: Model Callbacks loading from Artifacts/callbacks.pkl...]
+[2023-12-21 22:52:07,983: INFO: Model_Training: Model Callbacks Successfully loaded!]
+[2023-12-21 22:52:07,985: INFO: Model_Training: Model Training Started...]
+[2023-12-21 22:52:07,987: INFO: Model_Training: Model training Completed!]
+[2023-12-21 22:52:07,988: INFO: Model_Training: Best Model Saved at Artifacts/Best_model.h5]
+[2023-12-21 22:52:07,990: INFO: Model_Training: Model History saved at Artifacts/Model_history.pkl]
+[2023-12-21 22:52:08,007: INFO: Main: >>>>>> stage Model Callbacks completed <<<<<<
+
+x==========x]
+[2023-12-21 22:54:35,135: WARNING: module_wrapper: From C:\Users\hp\Desktop\Voice-Inspired-Object-Vision\Project-Environment\lib\site-packages\keras\src\losses.py:2976: The name tf.losses.sparse_softmax_cross_entropy is deprecated. Please use tf.compat.v1.losses.sparse_softmax_cross_entropy instead.
+]
+[2023-12-21 22:54:42,665: INFO: Data_Preparation: Image-to-text model loaded]
+[2023-12-21 22:54:43,018: INFO: Main: >>>>>> stage Data Ingestion started <<<<<<]
+[2023-12-21 22:54:43,018: INFO: Main: >>>>>> stage Data Ingestion completed <<<<<<
+
+x==========x]
+[2023-12-21 22:54:43,019: INFO: Main: >>>>>> stage Data Validation started <<<<<<]
+[2023-12-21 22:54:43,020: INFO: Main: >>>>>> stage Data Validation completed <<<<<<
+
+x==========x]
+[2023-12-21 22:54:43,020: INFO: Main: >>>>>> stage Data Preparation started <<<<<<]
+[2023-12-21 22:54:43,021: INFO: Main: >>>>>> stage Data Preparation completed <<<<<<
+
+x==========x]
+[2023-12-21 22:54:43,023: INFO: Main: >>>>>> stage Feature Extraction started <<<<<<]
+[2023-12-21 22:54:43,024: INFO: Main: >>>>>> stage Feature Extraction completed <<<<<<
+
+x==========x]
+[2023-12-21 22:54:43,025: INFO: Main: >>>>>> stage Model Architecture Developement started <<<<<<]
+[2023-12-21 22:54:43,027: INFO: Main: >>>>>> stage Model Architecture Developement completed <<<<<<
+
+x==========x]
+[2023-12-21 22:54:43,029: INFO: Main: >>>>>> stage Model Callbacks started <<<<<<]
+[2023-12-21 22:54:43,030: INFO: Main: >>>>>> stage Model Callbacks completed <<<<<<
+
+x==========x]
+[2023-12-21 22:54:43,031: INFO: Main: >>>>>> stage Model Callbacks started <<<<<<]
+[2023-12-21 22:54:43,053: INFO: Utils: yaml file: Src\Config.yaml loaded successfully]
+[2023-12-21 22:54:43,070: INFO: Utils: yaml file: Src\Params.yaml loaded successfully]
+[2023-12-21 22:54:43,076: INFO: config: Getting Model Training configuration...]
+[2023-12-21 22:54:43,080: INFO: Model_Training: Loading Training Data...]
+[2023-12-21 22:54:43,101: INFO: Model_Training: Training Data Successfully Loaded!]
+[2023-12-21 22:54:43,102: INFO: Model_Training: Loading Validation Data...]
+[2023-12-21 22:54:43,114: INFO: Model_Training: Validation Data Successfully Loaded!]
+[2023-12-21 22:54:43,117: INFO: Model_Training: Model Training Started...]
+[2023-12-21 22:54:43,120: INFO: Model_Training: Model training Completed!]
+[2023-12-21 22:54:43,122: INFO: Model_Training: Best Model Saved at Artifacts/Best_model.h5]
+[2023-12-21 22:54:43,128: INFO: Model_Training: Model History saved at Artifacts/Model_history.pkl]
+[2023-12-21 22:54:43,130: INFO: Main: >>>>>> stage Model Callbacks completed <<<<<<
+
+x==========x]
+[2023-12-21 22:56:21,879: WARNING: module_wrapper: From C:\Users\hp\Desktop\Voice-Inspired-Object-Vision\Project-Environment\lib\site-packages\keras\src\losses.py:2976: The name tf.losses.sparse_softmax_cross_entropy is deprecated. Please use tf.compat.v1.losses.sparse_softmax_cross_entropy instead.
+]
+[2023-12-21 22:56:29,653: INFO: Data_Preparation: Image-to-text model loaded]
+[2023-12-21 22:56:30,051: INFO: Main: >>>>>> stage Data Ingestion started <<<<<<]
+[2023-12-21 22:56:30,054: INFO: Main: >>>>>> stage Data Ingestion completed <<<<<<
+
+x==========x]
+[2023-12-21 22:56:30,058: INFO: Main: >>>>>> stage Data Validation started <<<<<<]
+[2023-12-21 22:56:30,059: INFO: Main: >>>>>> stage Data Validation completed <<<<<<
+
+x==========x]
+[2023-12-21 22:56:30,059: INFO: Main: >>>>>> stage Data Preparation started <<<<<<]
+[2023-12-21 22:56:30,060: INFO: Main: >>>>>> stage Data Preparation completed <<<<<<
+
+x==========x]
+[2023-12-21 22:56:30,063: INFO: Main: >>>>>> stage Feature Extraction started <<<<<<]
+[2023-12-21 22:56:30,064: INFO: Main: >>>>>> stage Feature Extraction completed <<<<<<
+
+x==========x]
+[2023-12-21 22:56:30,068: INFO: Main: >>>>>> stage Model Architecture Developement started <<<<<<]
+[2023-12-21 22:56:30,078: INFO: Main: >>>>>> stage Model Architecture Developement completed <<<<<<
+
+x==========x]
+[2023-12-21 22:56:30,082: INFO: Main: >>>>>> stage Model Callbacks started <<<<<<]
+[2023-12-21 22:56:30,086: INFO: Main: >>>>>> stage Model Callbacks completed <<<<<<
+
+x==========x]
+[2023-12-21 22:56:30,089: INFO: Main: >>>>>> stage Model Callbacks started <<<<<<]
+[2023-12-21 22:56:30,109: INFO: Utils: yaml file: Src\Config.yaml loaded successfully]
+[2023-12-21 22:56:30,144: INFO: Utils: yaml file: Src\Params.yaml loaded successfully]
+[2023-12-21 22:56:30,147: INFO: config: Getting Model Training configuration...]
+[2023-12-21 22:56:30,149: INFO: Model_Training: Loading Training Data...]
+[2023-12-21 22:56:30,163: INFO: Model_Training: Training Data Successfully Loaded!]
+[2023-12-21 22:56:30,164: INFO: Model_Training: Loading Validation Data...]
+[2023-12-21 22:56:30,174: INFO: Model_Training: Validation Data Successfully Loaded!]
+[2023-12-21 22:56:30,176: INFO: Model_Training: Model Training Started...]
+[2023-12-21 22:56:30,177: INFO: Model_Training: Model training Completed!]
+[2023-12-21 22:56:30,178: INFO: Model_Training: Best Model Saved at Artifacts/Best_model.h5]
+[2023-12-21 22:56:30,180: INFO: Model_Training: Model History saved at Artifacts/Model_history.pkl]
+[2023-12-21 22:56:30,181: INFO: Main: >>>>>> stage Model Callbacks completed <<<<<<
+
+x==========x]
+[2023-12-21 22:57:15,053: WARNING: module_wrapper: From C:\Users\hp\Desktop\Voice-Inspired-Object-Vision\Project-Environment\lib\site-packages\keras\src\losses.py:2976: The name tf.losses.sparse_softmax_cross_entropy is deprecated. Please use tf.compat.v1.losses.sparse_softmax_cross_entropy instead.
+]
+[2023-12-21 22:57:21,897: INFO: Data_Preparation: Image-to-text model loaded]
+[2023-12-21 22:57:22,523: INFO: Main: >>>>>> stage Data Ingestion started <<<<<<]
+[2023-12-21 22:57:22,524: INFO: Main: >>>>>> stage Data Ingestion completed <<<<<<
+
+x==========x]
+[2023-12-21 22:57:22,525: INFO: Main: >>>>>> stage Data Validation started <<<<<<]
+[2023-12-21 22:57:22,525: INFO: Main: >>>>>> stage Data Validation completed <<<<<<
+
+x==========x]
+[2023-12-21 22:57:22,526: INFO: Main: >>>>>> stage Data Preparation started <<<<<<]
+[2023-12-21 22:57:22,526: INFO: Main: >>>>>> stage Data Preparation completed <<<<<<
+
+x==========x]
+[2023-12-21 22:57:22,527: INFO: Main: >>>>>> stage Feature Extraction started <<<<<<]
+[2023-12-21 22:57:22,529: INFO: Main: >>>>>> stage Feature Extraction completed <<<<<<
+
+x==========x]
+[2023-12-21 22:57:22,531: INFO: Main: >>>>>> stage Model Architecture Developement started <<<<<<]
+[2023-12-21 22:57:22,534: INFO: Main: >>>>>> stage Model Architecture Developement completed <<<<<<
+
+x==========x]
+[2023-12-21 22:57:22,540: INFO: Main: >>>>>> stage Model Callbacks started <<<<<<]
+[2023-12-21 22:57:22,542: INFO: Main: >>>>>> stage Model Callbacks completed <<<<<<
+
+x==========x]
+[2023-12-21 22:57:22,543: INFO: Main: >>>>>> stage Model Callbacks started <<<<<<]
+[2023-12-21 22:57:22,559: INFO: Utils: yaml file: Src\Config.yaml loaded successfully]
+[2023-12-21 22:57:22,582: INFO: Utils: yaml file: Src\Params.yaml loaded successfully]
+[2023-12-21 22:57:22,586: INFO: config: Getting Model Training configuration...]
+[2023-12-21 22:57:22,589: INFO: Model_Training: Loading Training Data...]
+[2023-12-21 22:57:22,599: INFO: Model_Training: Training Data Successfully Loaded!]
+[2023-12-21 22:57:22,600: INFO: Model_Training: Loading Validation Data...]
+[2023-12-21 22:57:22,607: INFO: Model_Training: Validation Data Successfully Loaded!]
+[2023-12-21 22:57:22,609: INFO: Model_Training: Model Training Started...]
+[2023-12-21 22:57:22,611: INFO: Model_Training: Model training Completed!]
+[2023-12-21 22:57:22,612: INFO: Model_Training: Best Model Saved at Artifacts/Best_model.h5]
+[2023-12-21 22:57:22,614: INFO: Model_Training: Model History saved at Artifacts/Model_history.pkl]
+[2023-12-21 22:57:22,615: INFO: Main: >>>>>> stage Model Callbacks completed <<<<<<
+
+x==========x]

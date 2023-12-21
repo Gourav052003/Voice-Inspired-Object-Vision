@@ -1,5 +1,5 @@
 FeatureExtraction:
-  SET_TYPE: {"train":"train","validation":validation"}
+  SET_TYPE: {"train":"train","validation":"validation"}
 
 ModelArchitecture:
   FEATURE_SIZE: 512
