@@ -1,4 +1,3 @@
-from telnetlib import SE
 from Logger import logger
 from Utils import save_as_pickle
 from Entities.entity import ModelArchitectureConfig
@@ -65,10 +64,14 @@ class ModelArchitecture:
         return model
 
 
-    def Develop_Model(self):
+    def Develop_Model_architecture(self):
+
+        logger.info(f"Model Build in progress..")
         model = self.get_model()
+        logger.info(f"Model Successfully Builted!")
         model.summary()
         save_as_pickle(self.SAVE_MODEL_PATH,model)
-        
+        logger.info(f"Model saved at {self.SAVE_MODEL_PATH}")
+
 
 

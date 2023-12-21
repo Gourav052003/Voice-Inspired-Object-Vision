@@ -5572,3 +5572,189 @@ x==========x]
 [2023-12-20 16:53:43,532: INFO: Main: >>>>>> stage Feature Extraction completed <<<<<<
 
 x==========x]
+[2023-12-21 14:26:54,127: WARNING: module_wrapper: From C:\Users\hp\Desktop\Voice-Inspired-Object-Vision\Project-Environment\lib\site-packages\keras\src\losses.py:2976: The name tf.losses.sparse_softmax_cross_entropy is deprecated. Please use tf.compat.v1.losses.sparse_softmax_cross_entropy instead.
+]
+[2023-12-21 14:27:12,569: INFO: Data_Preparation: Image-to-text model loaded]
+[2023-12-21 14:27:13,549: INFO: Main: >>>>>> stage Data Ingestion started <<<<<<]
+[2023-12-21 14:27:13,551: INFO: Main: >>>>>> stage Data Ingestion completed <<<<<<
+
+x==========x]
+[2023-12-21 14:27:13,552: INFO: Main: >>>>>> stage Data Validation started <<<<<<]
+[2023-12-21 14:27:13,553: INFO: Main: >>>>>> stage Data Validation completed <<<<<<
+
+x==========x]
+[2023-12-21 14:27:13,554: INFO: Main: >>>>>> stage Data Preparation started <<<<<<]
+[2023-12-21 14:27:13,555: INFO: Main: >>>>>> stage Data Preparation completed <<<<<<
+
+x==========x]
+[2023-12-21 14:27:13,555: INFO: Main: >>>>>> stage Feature Extraction started <<<<<<]
+[2023-12-21 14:27:13,555: INFO: Main: >>>>>> stage Feature Extraction completed <<<<<<
+
+x==========x]
+[2023-12-21 14:27:13,557: INFO: Main: >>>>>> stage Model Architecture Developement started <<<<<<]
+[2023-12-21 14:27:13,584: INFO: Utils: yaml file: Src\Config.yaml loaded successfully]
+[2023-12-21 14:27:13,600: INFO: Utils: yaml file: Src\Params.yaml loaded successfully]
+[2023-12-21 14:27:13,603: ERROR: Main: 'ConfigurationManager' object has no attribute 'get_model_architecture_config']
+Traceback (most recent call last):
+  File "C:\Users\hp\Desktop\Voice-Inspired-Object-Vision\Src\Main.py", line 64, in <module>
+    model_architecture_development_pipeline.start()
+  File "C:\Users\hp\Desktop\Voice-Inspired-Object-Vision\Src\Pipelines\stage_05_model_architecture.py", line 22, in start
+    model_architecture_config = config.get_model_architecture_config()
+AttributeError: 'ConfigurationManager' object has no attribute 'get_model_architecture_config'
+[2023-12-21 14:28:23,648: WARNING: module_wrapper: From C:\Users\hp\Desktop\Voice-Inspired-Object-Vision\Project-Environment\lib\site-packages\keras\src\losses.py:2976: The name tf.losses.sparse_softmax_cross_entropy is deprecated. Please use tf.compat.v1.losses.sparse_softmax_cross_entropy instead.
+]
+[2023-12-21 14:28:30,410: INFO: Data_Preparation: Image-to-text model loaded]
+[2023-12-21 14:28:30,723: INFO: Main: >>>>>> stage Data Ingestion started <<<<<<]
+[2023-12-21 14:28:30,723: INFO: Main: >>>>>> stage Data Ingestion completed <<<<<<
+
+x==========x]
+[2023-12-21 14:28:30,724: INFO: Main: >>>>>> stage Data Validation started <<<<<<]
+[2023-12-21 14:28:30,724: INFO: Main: >>>>>> stage Data Validation completed <<<<<<
+
+x==========x]
+[2023-12-21 14:28:30,724: INFO: Main: >>>>>> stage Data Preparation started <<<<<<]
+[2023-12-21 14:28:30,725: INFO: Main: >>>>>> stage Data Preparation completed <<<<<<
+
+x==========x]
+[2023-12-21 14:28:30,725: INFO: Main: >>>>>> stage Feature Extraction started <<<<<<]
+[2023-12-21 14:28:30,725: INFO: Main: >>>>>> stage Feature Extraction completed <<<<<<
+
+x==========x]
+[2023-12-21 14:28:30,729: INFO: Main: >>>>>> stage Model Architecture Developement started <<<<<<]
+[2023-12-21 14:28:30,749: INFO: Utils: yaml file: Src\Config.yaml loaded successfully]
+[2023-12-21 14:28:30,758: INFO: Utils: yaml file: Src\Params.yaml loaded successfully]
+[2023-12-21 14:28:30,761: INFO: config: Getting Model Architecture Configuration...]
+[2023-12-21 14:28:30,766: ERROR: Main: "'ConfigBox' object has no attribute 'embedding_ouput_dims'"]
+Traceback (most recent call last):
+  File "box\\box.py", line 592, in box.box.Box.__getitem__
+KeyError: 'EMBEDDING_OUPUT_DIMS'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "box\\box.py", line 631, in box.box.Box.__getattr__
+  File "box\\box.py", line 619, in box.box.Box.__getitem__
+box.exceptions.BoxKeyError: "'EMBEDDING_OUPUT_DIMS'"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "box\\box.py", line 633, in box.box.Box.__getattr__
+AttributeError: 'ConfigBox' object has no attribute 'EMBEDDING_OUPUT_DIMS'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "box\\config_box.py", line 29, in box.config_box.ConfigBox.__getattr__
+  File "box\\box.py", line 647, in box.box.Box.__getattr__
+box.exceptions.BoxKeyError: "'ConfigBox' object has no attribute 'EMBEDDING_OUPUT_DIMS'"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "box\\box.py", line 592, in box.box.Box.__getitem__
+KeyError: 'embedding_ouput_dims'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "box\\box.py", line 631, in box.box.Box.__getattr__
+  File "box\\box.py", line 619, in box.box.Box.__getitem__
+box.exceptions.BoxKeyError: "'embedding_ouput_dims'"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "box\\box.py", line 633, in box.box.Box.__getattr__
+AttributeError: 'ConfigBox' object has no attribute 'embedding_ouput_dims'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\hp\Desktop\Voice-Inspired-Object-Vision\Src\Main.py", line 64, in <module>
+    model_architecture_development_pipeline.start()
+  File "C:\Users\hp\Desktop\Voice-Inspired-Object-Vision\Src\Pipelines\stage_05_model_architecture.py", line 22, in start
+    model_architecture_config = config.get_model_architecture_config()
+  File "C:\Users\hp\Desktop\Voice-Inspired-Object-Vision\Src\Configuration\config.py", line 84, in get_model_architecture_config
+    EMBEDDING_OUTPUT_DIMS = params.EMBEDDING_OUPUT_DIMS,
+  File "box\\config_box.py", line 31, in box.config_box.ConfigBox.__getattr__
+  File "box\\box.py", line 647, in box.box.Box.__getattr__
+box.exceptions.BoxKeyError: "'ConfigBox' object has no attribute 'embedding_ouput_dims'"
+[2023-12-21 14:30:00,634: WARNING: module_wrapper: From C:\Users\hp\Desktop\Voice-Inspired-Object-Vision\Project-Environment\lib\site-packages\keras\src\losses.py:2976: The name tf.losses.sparse_softmax_cross_entropy is deprecated. Please use tf.compat.v1.losses.sparse_softmax_cross_entropy instead.
+]
+[2023-12-21 14:30:06,682: INFO: Data_Preparation: Image-to-text model loaded]
+[2023-12-21 14:30:06,879: INFO: Main: >>>>>> stage Data Ingestion started <<<<<<]
+[2023-12-21 14:30:06,879: INFO: Main: >>>>>> stage Data Ingestion completed <<<<<<
+
+x==========x]
+[2023-12-21 14:30:06,880: INFO: Main: >>>>>> stage Data Validation started <<<<<<]
+[2023-12-21 14:30:06,880: INFO: Main: >>>>>> stage Data Validation completed <<<<<<
+
+x==========x]
+[2023-12-21 14:30:06,880: INFO: Main: >>>>>> stage Data Preparation started <<<<<<]
+[2023-12-21 14:30:06,880: INFO: Main: >>>>>> stage Data Preparation completed <<<<<<
+
+x==========x]
+[2023-12-21 14:30:06,881: INFO: Main: >>>>>> stage Feature Extraction started <<<<<<]
+[2023-12-21 14:30:06,881: INFO: Main: >>>>>> stage Feature Extraction completed <<<<<<
+
+x==========x]
+[2023-12-21 14:30:06,882: INFO: Main: >>>>>> stage Model Architecture Developement started <<<<<<]
+[2023-12-21 14:30:06,890: INFO: Utils: yaml file: Src\Config.yaml loaded successfully]
+[2023-12-21 14:30:06,900: INFO: Utils: yaml file: Src\Params.yaml loaded successfully]
+[2023-12-21 14:30:06,901: INFO: config: Getting Model Architecture Configuration...]
+[2023-12-21 14:30:06,902: INFO: Model_Architecture: Model Build in progress..]
+[2023-12-21 14:30:07,472: WARNING: module_wrapper: From C:\Users\hp\Desktop\Voice-Inspired-Object-Vision\Project-Environment\lib\site-packages\keras\src\backend.py:1398: The name tf.executing_eagerly_outside_functions is deprecated. Please use tf.compat.v1.executing_eagerly_outside_functions instead.
+]
+[2023-12-21 14:30:14,233: ERROR: Main: Cannot convert '1e-4' to EagerTensor of dtype float]
+Traceback (most recent call last):
+  File "C:\Users\hp\Desktop\Voice-Inspired-Object-Vision\Src\Main.py", line 64, in <module>
+    model_architecture_development_pipeline.start()
+  File "C:\Users\hp\Desktop\Voice-Inspired-Object-Vision\Src\Pipelines\stage_05_model_architecture.py", line 24, in start
+    model_architecture.Develop_Model_architecture()
+  File "C:\Users\hp\Desktop\Voice-Inspired-Object-Vision\Src\Components\Model_Architecture.py", line 70, in Develop_Model_architecture
+    model = self.get_model()
+  File "C:\Users\hp\Desktop\Voice-Inspired-Object-Vision\Src\Components\Model_Architecture.py", line 62, in get_model
+    model.compile(optimizer = Adam(learning_rate= self.LEARNING_RATE),loss = self.LOSS)
+  File "C:\Users\hp\Desktop\Voice-Inspired-Object-Vision\Project-Environment\lib\site-packages\keras\src\optimizers\adam.py", line 122, in __init__
+    self._learning_rate = self._build_learning_rate(learning_rate)
+  File "C:\Users\hp\Desktop\Voice-Inspired-Object-Vision\Project-Environment\lib\site-packages\keras\src\optimizers\optimizer.py", line 1282, in _build_learning_rate
+    return super()._build_learning_rate(learning_rate)
+  File "C:\Users\hp\Desktop\Voice-Inspired-Object-Vision\Project-Environment\lib\site-packages\keras\src\optimizers\optimizer.py", line 395, in _build_learning_rate
+    return tf.Variable(
+  File "C:\Users\hp\Desktop\Voice-Inspired-Object-Vision\Project-Environment\lib\site-packages\tensorflow\python\util\traceback_utils.py", line 153, in error_handler
+    raise e.with_traceback(filtered_tb) from None
+  File "C:\Users\hp\Desktop\Voice-Inspired-Object-Vision\Project-Environment\lib\site-packages\tensorflow\python\framework\constant_op.py", line 103, in convert_to_eager_tensor
+    return ops.EagerTensor(value, ctx.device_name, dtype)
+TypeError: Cannot convert '1e-4' to EagerTensor of dtype float
+[2023-12-21 14:31:14,941: WARNING: module_wrapper: From C:\Users\hp\Desktop\Voice-Inspired-Object-Vision\Project-Environment\lib\site-packages\keras\src\losses.py:2976: The name tf.losses.sparse_softmax_cross_entropy is deprecated. Please use tf.compat.v1.losses.sparse_softmax_cross_entropy instead.
+]
+[2023-12-21 14:31:24,217: INFO: Data_Preparation: Image-to-text model loaded]
+[2023-12-21 14:31:24,427: INFO: Main: >>>>>> stage Data Ingestion started <<<<<<]
+[2023-12-21 14:31:24,428: INFO: Main: >>>>>> stage Data Ingestion completed <<<<<<
+
+x==========x]
+[2023-12-21 14:31:24,428: INFO: Main: >>>>>> stage Data Validation started <<<<<<]
+[2023-12-21 14:31:24,428: INFO: Main: >>>>>> stage Data Validation completed <<<<<<
+
+x==========x]
+[2023-12-21 14:31:24,428: INFO: Main: >>>>>> stage Data Preparation started <<<<<<]
+[2023-12-21 14:31:24,428: INFO: Main: >>>>>> stage Data Preparation completed <<<<<<
+
+x==========x]
+[2023-12-21 14:31:24,429: INFO: Main: >>>>>> stage Feature Extraction started <<<<<<]
+[2023-12-21 14:31:24,429: INFO: Main: >>>>>> stage Feature Extraction completed <<<<<<
+
+x==========x]
+[2023-12-21 14:31:24,430: INFO: Main: >>>>>> stage Model Architecture Developement started <<<<<<]
+[2023-12-21 14:31:24,438: INFO: Utils: yaml file: Src\Config.yaml loaded successfully]
+[2023-12-21 14:31:24,484: INFO: Utils: yaml file: Src\Params.yaml loaded successfully]
+[2023-12-21 14:31:24,487: INFO: config: Getting Model Architecture Configuration...]
+[2023-12-21 14:31:24,489: INFO: Model_Architecture: Model Build in progress..]
+[2023-12-21 14:31:24,943: WARNING: module_wrapper: From C:\Users\hp\Desktop\Voice-Inspired-Object-Vision\Project-Environment\lib\site-packages\keras\src\backend.py:1398: The name tf.executing_eagerly_outside_functions is deprecated. Please use tf.compat.v1.executing_eagerly_outside_functions instead.
+]
+[2023-12-21 14:31:33,225: INFO: Model_Architecture: Model Successfully Builted!]
+[2023-12-21 14:33:00,743: INFO: Model_Architecture: Model saved at Artifacts/VIOV_Model.pkl]
+[2023-12-21 14:33:00,772: INFO: Main: >>>>>> stage Model Architecture Developement completed <<<<<<
+
+x==========x]

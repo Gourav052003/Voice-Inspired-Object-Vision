@@ -1,3 +1,4 @@
+from Logger import logger
 from Constant import CONFIG_FILE_PATH,PARAMS_FILE_PATH,DOWNLOAD_URL
 from Utils import read_yaml
 from Entities.entity import (DataIngestionConfig,
@@ -15,6 +16,8 @@ class ConfigurationManager:
 
     def get_data_ingestion_config(self)->DataIngestionConfig:
 
+        logger.info("Getting Data Ingestion Configuration...")
+
         config = self.config.DataIngestion
 
         data_ingestion_config = DataIngestionConfig(
@@ -29,6 +32,8 @@ class ConfigurationManager:
 
 
     def get_data_validation_config(self)->DataValidationConfig:
+
+        logger.info("Getting Data Validation Configuration...")
 
         config = self.config.DataValidation 
 
@@ -48,6 +53,8 @@ class ConfigurationManager:
 
     def get_data_preparation_config(self)->DataPreparationConfig:
 
+        logger.info("Getting Data Preparation Configuration...")
+
         config = self.config.DataPreparation
 
         data_preparation_config = DataPreparationConfig(
@@ -61,7 +68,9 @@ class ConfigurationManager:
 
 
 
-    def get_model_development_config(self)->ModelArchitectureConfig:
+    def get_model_architecture_config(self)->ModelArchitectureConfig:
+
+        logger.info("Getting Model Architecture Configuration...")
 
         config = self.config.ModelArchitecture
         params = self.params.ModelArchitecture
@@ -72,7 +81,7 @@ class ConfigurationManager:
             FEATURE_SIZE = params.FEATURE_SIZE,
             TEXT_SEQUENCE_INPUT_LENGTH = params.TEXT_SEQUENCE_INPUT_LENGTH,
             EMBEDDING_INPUT_DIMS = params.EMBEDDING_INPUT_DIMS,
-            EMBEDDING_OUTPUT_DIMS = params.EMBEDDING_OUPUT_DIMS,
+            EMBEDDING_OUTPUT_DIMS = params.EMBEDDING_OUTPUT_DIMS,
             LEARNING_RATE = params.LEARNING_RATE,
             LOSS = params.LOSS
 
