@@ -2,7 +2,8 @@ from Constant import CONFIG_FILE_PATH,PARAMS_FILE_PATH,DOWNLOAD_URL
 from Utils import read_yaml
 from Entities.entity import (DataIngestionConfig,
                             DataValidationConfig,
-                            DataPreparationConfig)
+                            DataPreparationConfig,
+                            ModelArchitectureConfig)
 
 
 class ConfigurationManager:
@@ -57,5 +58,27 @@ class ConfigurationManager:
         )
 
         return data_preparation_config   
+
+
+
+    def get_model_development_config(self)->ModelArchitectureConfig:
+
+        config = self.config.ModelArchitecture
+        params = self.params.ModelArchitecture
+
+        model_architecture_config = ModelArchitectureConfig(
+
+            SAVE_MODEL_PATH = config.SAVE_MODEL_PATH,
+            FEATURE_SIZE = params.FEATURE_SIZE,
+            TEXT_SEQUENCE_INPUT_LENGTH = params.TEXT_SEQUENCE_INPUT_LENGTH,
+            EMBEDDING_INPUT_DIMS = params.EMBEDDING_INPUT_DIMS,
+            EMBEDDING_OUTPUT_DIMS = params.EMBEDDING_OUPUT_DIMS,
+            LEARNING_RATE = params.LEARNING_RATE,
+            LOSS = params.LOSS
+
+        )
+
+        return model_architecture_config
+
 
 

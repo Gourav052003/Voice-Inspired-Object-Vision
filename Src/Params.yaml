@@ -1,2 +1,7 @@
-Temporary :
-  tem1 : "temporary fix"
+ModelArchitecture:
+  FEATURE_SIZE: 512
+  TEXT_SEQUENCE_INPUT_LENGTH: 100
+  EMBEDDING_INPUT_DIMS : 3000
+  EMBEDDING_OUTPUT_DIMS : 2500
+  LEARNING_RATE: 1e-4
+  LOSS : "mse"  

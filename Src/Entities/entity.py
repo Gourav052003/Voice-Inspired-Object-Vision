@@ -27,6 +27,15 @@ it will be hard coded with optimizations in components
 Feature_Extraction.py and config.py
 '''
 
+@dataclass(frozen=True)
+class ModelArchitectureConfig:
+    SAVE_MODEL_PATH:Path
+    FEATURE_SIZE: int
+    TEXT_SEQUENCE_INPUT_LENGTH:int
+    EMBEDDING_INPUT_DIMS : int
+    EMBEDDING_OUTPUT_DIMS : int
+    LEARNING_RATE: float
+    LOSS : str 
 
 
 
