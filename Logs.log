@@ -6023,3 +6023,292 @@ x==========x]
 [2023-12-21 18:49:32,749: INFO: Main: >>>>>> stage Model Callbacks completed <<<<<<
 
 x==========x]
+[2023-12-21 21:44:17,228: WARNING: module_wrapper: From C:\Users\hp\Desktop\Voice-Inspired-Object-Vision\Project-Environment\lib\site-packages\keras\src\losses.py:2976: The name tf.losses.sparse_softmax_cross_entropy is deprecated. Please use tf.compat.v1.losses.sparse_softmax_cross_entropy instead.
+]
+[2023-12-21 21:44:28,663: INFO: Data_Preparation: Image-to-text model loaded]
+[2023-12-21 21:44:29,247: INFO: Main: >>>>>> stage Data Ingestion started <<<<<<]
+[2023-12-21 21:44:29,249: INFO: Main: >>>>>> stage Data Ingestion completed <<<<<<
+
+x==========x]
+[2023-12-21 21:44:29,250: INFO: Main: >>>>>> stage Data Validation started <<<<<<]
+[2023-12-21 21:44:29,252: INFO: Main: >>>>>> stage Data Validation completed <<<<<<
+
+x==========x]
+[2023-12-21 21:44:29,255: INFO: Main: >>>>>> stage Data Preparation started <<<<<<]
+[2023-12-21 21:44:29,257: INFO: Main: >>>>>> stage Data Preparation completed <<<<<<
+
+x==========x]
+[2023-12-21 21:44:29,259: INFO: Main: >>>>>> stage Feature Extraction started <<<<<<]
+[2023-12-21 21:44:29,260: INFO: Main: >>>>>> stage Feature Extraction completed <<<<<<
+
+x==========x]
+[2023-12-21 21:44:29,261: INFO: Main: >>>>>> stage Model Architecture Developement started <<<<<<]
+[2023-12-21 21:44:29,285: INFO: Utils: yaml file: Src\Config.yaml loaded successfully]
+[2023-12-21 21:44:29,323: INFO: Utils: yaml file: Src\Params.yaml loaded successfully]
+[2023-12-21 21:44:29,327: INFO: config: Getting Model Architecture Configuration...]
+[2023-12-21 21:44:29,330: INFO: Model_Architecture: Model Build in progress..]
+[2023-12-21 21:44:30,131: WARNING: module_wrapper: From C:\Users\hp\Desktop\Voice-Inspired-Object-Vision\Project-Environment\lib\site-packages\keras\src\backend.py:1398: The name tf.executing_eagerly_outside_functions is deprecated. Please use tf.compat.v1.executing_eagerly_outside_functions instead.
+]
+[2023-12-21 21:44:33,083: INFO: Model_Architecture: Model Successfully Builted!]
+[2023-12-21 21:44:34,221: INFO: Model_Architecture: Model saved at Artifacts/VIOV_Model.pkl]
+[2023-12-21 21:44:34,222: INFO: Main: >>>>>> stage Model Architecture Developement completed <<<<<<
+
+x==========x]
+[2023-12-21 21:44:34,225: INFO: Main: >>>>>> stage Model Callbacks started <<<<<<]
+[2023-12-21 21:44:34,248: INFO: Utils: yaml file: Src\Config.yaml loaded successfully]
+[2023-12-21 21:44:34,254: INFO: Utils: yaml file: Src\Params.yaml loaded successfully]
+[2023-12-21 21:44:34,256: INFO: config: Getting Model Callbacks Configuration...]
+[2023-12-21 21:44:34,257: INFO: Model_Callbacks: Building Model Callbacks...]
+[2023-12-21 21:44:34,261: INFO: Model_Callbacks: Model callbacks saved at Artifacts/callbacks.pkl]
+[2023-12-21 21:44:34,262: INFO: Main: >>>>>> stage Model Callbacks completed <<<<<<
+
+x==========x]
+[2023-12-21 21:44:34,263: INFO: Main: >>>>>> stage Model Callbacks started <<<<<<]
+[2023-12-21 21:44:34,296: INFO: Utils: yaml file: Src\Config.yaml loaded successfully]
+[2023-12-21 21:44:34,307: INFO: Utils: yaml file: Src\Params.yaml loaded successfully]
+[2023-12-21 21:44:34,308: INFO: config: Getting Model Training configuration...]
+[2023-12-21 21:44:34,310: ERROR: Main: "'ConfigBox' object has no attribute 'modeltrainingconfig'"]
+Traceback (most recent call last):
+  File "box\\box.py", line 592, in box.box.Box.__getitem__
+KeyError: 'ModelTrainingConfig'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "box\\box.py", line 631, in box.box.Box.__getattr__
+  File "box\\box.py", line 619, in box.box.Box.__getitem__
+box.exceptions.BoxKeyError: "'ModelTrainingConfig'"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "box\\box.py", line 633, in box.box.Box.__getattr__
+AttributeError: 'ConfigBox' object has no attribute 'ModelTrainingConfig'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "box\\config_box.py", line 29, in box.config_box.ConfigBox.__getattr__
+  File "box\\box.py", line 647, in box.box.Box.__getattr__
+box.exceptions.BoxKeyError: "'ConfigBox' object has no attribute 'ModelTrainingConfig'"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "box\\box.py", line 592, in box.box.Box.__getitem__
+KeyError: 'modeltrainingconfig'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "box\\box.py", line 631, in box.box.Box.__getattr__
+  File "box\\box.py", line 619, in box.box.Box.__getitem__
+box.exceptions.BoxKeyError: "'modeltrainingconfig'"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "box\\box.py", line 633, in box.box.Box.__getattr__
+AttributeError: 'ConfigBox' object has no attribute 'modeltrainingconfig'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\hp\Desktop\Voice-Inspired-Object-Vision\Src\Main.py", line 88, in <module>
+    model_training_pipeline.start()
+  File "C:\Users\hp\Desktop\Voice-Inspired-Object-Vision\Src\Pipelines\stage_07_model_training.py", line 21, in start
+    model_training_config = config.get_model_training_config()
+  File "C:\Users\hp\Desktop\Voice-Inspired-Object-Vision\Src\Configuration\config.py", line 142, in get_model_training_config
+    config = self.config.ModelTrainingConfig
+  File "box\\config_box.py", line 31, in box.config_box.ConfigBox.__getattr__
+  File "box\\box.py", line 647, in box.box.Box.__getattr__
+box.exceptions.BoxKeyError: "'ConfigBox' object has no attribute 'modeltrainingconfig'"
+[2023-12-21 21:45:54,809: WARNING: module_wrapper: From C:\Users\hp\Desktop\Voice-Inspired-Object-Vision\Project-Environment\lib\site-packages\keras\src\losses.py:2976: The name tf.losses.sparse_softmax_cross_entropy is deprecated. Please use tf.compat.v1.losses.sparse_softmax_cross_entropy instead.
+]
+[2023-12-21 21:45:58,582: INFO: Data_Preparation: Image-to-text model loaded]
+[2023-12-21 21:45:58,731: INFO: Main: >>>>>> stage Data Ingestion started <<<<<<]
+[2023-12-21 21:45:58,731: INFO: Main: >>>>>> stage Data Ingestion completed <<<<<<
+
+x==========x]
+[2023-12-21 21:45:58,731: INFO: Main: >>>>>> stage Data Validation started <<<<<<]
+[2023-12-21 21:45:58,731: INFO: Main: >>>>>> stage Data Validation completed <<<<<<
+
+x==========x]
+[2023-12-21 21:45:58,732: INFO: Main: >>>>>> stage Data Preparation started <<<<<<]
+[2023-12-21 21:45:58,732: INFO: Main: >>>>>> stage Data Preparation completed <<<<<<
+
+x==========x]
+[2023-12-21 21:45:58,732: INFO: Main: >>>>>> stage Feature Extraction started <<<<<<]
+[2023-12-21 21:45:58,733: INFO: Main: >>>>>> stage Feature Extraction completed <<<<<<
+
+x==========x]
+[2023-12-21 21:45:58,733: INFO: Main: >>>>>> stage Model Architecture Developement started <<<<<<]
+[2023-12-21 21:45:58,743: INFO: Utils: yaml file: Src\Config.yaml loaded successfully]
+[2023-12-21 21:45:58,748: INFO: Utils: yaml file: Src\Params.yaml loaded successfully]
+[2023-12-21 21:45:58,748: INFO: config: Getting Model Architecture Configuration...]
+[2023-12-21 21:45:58,749: INFO: Model_Architecture: Model Build in progress..]
+[2023-12-21 21:45:59,207: WARNING: module_wrapper: From C:\Users\hp\Desktop\Voice-Inspired-Object-Vision\Project-Environment\lib\site-packages\keras\src\backend.py:1398: The name tf.executing_eagerly_outside_functions is deprecated. Please use tf.compat.v1.executing_eagerly_outside_functions instead.
+]
+[2023-12-21 21:46:00,156: INFO: Model_Architecture: Model Successfully Builted!]
+[2023-12-21 21:46:00,976: INFO: Model_Architecture: Model saved at Artifacts/VIOV_Model.pkl]
+[2023-12-21 21:46:00,977: INFO: Main: >>>>>> stage Model Architecture Developement completed <<<<<<
+
+x==========x]
+[2023-12-21 21:46:00,978: INFO: Main: >>>>>> stage Model Callbacks started <<<<<<]
+[2023-12-21 21:46:00,988: INFO: Utils: yaml file: Src\Config.yaml loaded successfully]
+[2023-12-21 21:46:00,993: INFO: Utils: yaml file: Src\Params.yaml loaded successfully]
+[2023-12-21 21:46:00,994: INFO: config: Getting Model Callbacks Configuration...]
+[2023-12-21 21:46:00,994: INFO: Model_Callbacks: Building Model Callbacks...]
+[2023-12-21 21:46:01,006: INFO: Model_Callbacks: Model callbacks saved at Artifacts/callbacks.pkl]
+[2023-12-21 21:46:01,009: INFO: Main: >>>>>> stage Model Callbacks completed <<<<<<
+
+x==========x]
+[2023-12-21 21:46:01,011: INFO: Main: >>>>>> stage Model Callbacks started <<<<<<]
+[2023-12-21 21:46:01,022: INFO: Utils: yaml file: Src\Config.yaml loaded successfully]
+[2023-12-21 21:46:01,028: INFO: Utils: yaml file: Src\Params.yaml loaded successfully]
+[2023-12-21 21:46:01,030: INFO: config: Getting Model Training configuration...]
+[2023-12-21 21:46:01,032: INFO: Model_Training: Loading Model from Artifacts/VIOV_Model.pkl ...]
+[2023-12-21 21:46:59,892: WARNING: optimizer: Skipping variable loading for optimizer 'Adam', because it has 59 variables whereas the saved optimizer has 1 variables. ]
+[2023-12-21 21:47:48,505: INFO: Model_Training: Model Successfully loaded!]
+[2023-12-21 21:47:48,506: INFO: Model_Training: Model Training Started...]
+[2023-12-21 21:47:48,574: ERROR: Main: Data cardinality is ambiguous:
+  x sizes: 2
+  y sizes: 1
+Make sure all arrays contain the same number of samples.]
+Traceback (most recent call last):
+  File "C:\Users\hp\Desktop\Voice-Inspired-Object-Vision\Src\Main.py", line 88, in <module>
+    model_training_pipeline.start()
+  File "C:\Users\hp\Desktop\Voice-Inspired-Object-Vision\Src\Pipelines\stage_07_model_training.py", line 23, in start
+    model_trainer.train_model()
+  File "C:\Users\hp\Desktop\Voice-Inspired-Object-Vision\Src\Components\Model_Training.py", line 40, in train_model
+    model_history = model.fit(x = self.X, y = self.Y, epochs = self.EPOCHS, batch_size = self.BATCH_SIZE,
+  File "C:\Users\hp\Desktop\Voice-Inspired-Object-Vision\Project-Environment\lib\site-packages\keras\src\utils\traceback_utils.py", line 70, in error_handler
+    raise e.with_traceback(filtered_tb) from None
+  File "C:\Users\hp\Desktop\Voice-Inspired-Object-Vision\Project-Environment\lib\site-packages\keras\src\engine\data_adapter.py", line 1960, in _check_data_cardinality
+    raise ValueError(msg)
+ValueError: Data cardinality is ambiguous:
+  x sizes: 2
+  y sizes: 1
+Make sure all arrays contain the same number of samples.
+[2023-12-21 21:50:57,935: WARNING: module_wrapper: From C:\Users\hp\Desktop\Voice-Inspired-Object-Vision\Project-Environment\lib\site-packages\keras\src\losses.py:2976: The name tf.losses.sparse_softmax_cross_entropy is deprecated. Please use tf.compat.v1.losses.sparse_softmax_cross_entropy instead.
+]
+[2023-12-21 21:51:02,283: INFO: Data_Preparation: Image-to-text model loaded]
+[2023-12-21 21:51:02,589: INFO: Main: >>>>>> stage Data Ingestion started <<<<<<]
+[2023-12-21 21:51:02,589: INFO: Main: >>>>>> stage Data Ingestion completed <<<<<<
+
+x==========x]
+[2023-12-21 21:51:02,590: INFO: Main: >>>>>> stage Data Validation started <<<<<<]
+[2023-12-21 21:51:02,590: INFO: Main: >>>>>> stage Data Validation completed <<<<<<
+
+x==========x]
+[2023-12-21 21:51:02,590: INFO: Main: >>>>>> stage Data Preparation started <<<<<<]
+[2023-12-21 21:51:02,591: INFO: Main: >>>>>> stage Data Preparation completed <<<<<<
+
+x==========x]
+[2023-12-21 21:51:02,592: INFO: Main: >>>>>> stage Feature Extraction started <<<<<<]
+[2023-12-21 21:51:02,593: INFO: Main: >>>>>> stage Feature Extraction completed <<<<<<
+
+x==========x]
+[2023-12-21 21:51:02,594: INFO: Main: >>>>>> stage Model Architecture Developement started <<<<<<]
+[2023-12-21 21:51:02,608: INFO: Utils: yaml file: Src\Config.yaml loaded successfully]
+[2023-12-21 21:51:02,648: INFO: Utils: yaml file: Src\Params.yaml loaded successfully]
+[2023-12-21 21:51:02,649: INFO: config: Getting Model Architecture Configuration...]
+[2023-12-21 21:51:02,651: INFO: Model_Architecture: Model Build in progress..]
+[2023-12-21 21:51:03,206: WARNING: module_wrapper: From C:\Users\hp\Desktop\Voice-Inspired-Object-Vision\Project-Environment\lib\site-packages\keras\src\backend.py:1398: The name tf.executing_eagerly_outside_functions is deprecated. Please use tf.compat.v1.executing_eagerly_outside_functions instead.
+]
+[2023-12-21 21:51:04,267: INFO: Model_Architecture: Model Successfully Builted!]
+[2023-12-21 21:51:04,921: INFO: Model_Architecture: Model saved at Artifacts/VIOV_Model.pkl]
+[2023-12-21 21:51:04,922: INFO: Main: >>>>>> stage Model Architecture Developement completed <<<<<<
+
+x==========x]
+[2023-12-21 21:51:04,923: INFO: Main: >>>>>> stage Model Callbacks started <<<<<<]
+[2023-12-21 21:51:04,933: INFO: Utils: yaml file: Src\Config.yaml loaded successfully]
+[2023-12-21 21:51:04,940: INFO: Utils: yaml file: Src\Params.yaml loaded successfully]
+[2023-12-21 21:51:04,942: INFO: config: Getting Model Callbacks Configuration...]
+[2023-12-21 21:51:04,942: INFO: Model_Callbacks: Building Model Callbacks...]
+[2023-12-21 21:51:04,947: INFO: Model_Callbacks: Model callbacks saved at Artifacts/callbacks.pkl]
+[2023-12-21 21:51:04,948: INFO: Main: >>>>>> stage Model Callbacks completed <<<<<<
+
+x==========x]
+[2023-12-21 21:51:04,949: INFO: Main: >>>>>> stage Model Callbacks started <<<<<<]
+[2023-12-21 21:51:04,962: INFO: Utils: yaml file: Src\Config.yaml loaded successfully]
+[2023-12-21 21:51:04,969: INFO: Utils: yaml file: Src\Params.yaml loaded successfully]
+[2023-12-21 21:51:04,970: INFO: config: Getting Model Training configuration...]
+[2023-12-21 21:51:04,971: INFO: Model_Training: Loading Model from Artifacts/VIOV_Model.pkl ...]
+[2023-12-21 21:51:55,728: WARNING: optimizer: Skipping variable loading for optimizer 'Adam', because it has 59 variables whereas the saved optimizer has 1 variables. ]
+[2023-12-21 21:52:44,641: INFO: Model_Training: Model Successfully loaded!]
+[2023-12-21 21:52:44,642: INFO: Model_Training: Model Training Started...]
+[2023-12-21 21:52:44,646: ERROR: Main: `validation_split` is only supported for Tensors or NumPy arrays, found following types in the input: [<class 'str'>, <class 'str'>, <class 'str'>]]
+Traceback (most recent call last):
+  File "C:\Users\hp\Desktop\Voice-Inspired-Object-Vision\Src\Main.py", line 88, in <module>
+    model_training_pipeline.start()
+  File "C:\Users\hp\Desktop\Voice-Inspired-Object-Vision\Src\Pipelines\stage_07_model_training.py", line 23, in start
+    model_trainer.train_model()
+  File "C:\Users\hp\Desktop\Voice-Inspired-Object-Vision\Src\Components\Model_Training.py", line 45, in train_model
+    model_history = model.fit(x = self.X, y = self.Y, epochs = self.EPOCHS, batch_size = self.BATCH_SIZE,
+  File "C:\Users\hp\Desktop\Voice-Inspired-Object-Vision\Project-Environment\lib\site-packages\keras\src\utils\traceback_utils.py", line 70, in error_handler
+    raise e.with_traceback(filtered_tb) from None
+  File "C:\Users\hp\Desktop\Voice-Inspired-Object-Vision\Project-Environment\lib\site-packages\keras\src\engine\data_adapter.py", line 1776, in train_validation_split
+    raise ValueError(
+ValueError: `validation_split` is only supported for Tensors or NumPy arrays, found following types in the input: [<class 'str'>, <class 'str'>, <class 'str'>]
+[2023-12-21 21:55:46,519: WARNING: module_wrapper: From C:\Users\hp\Desktop\Voice-Inspired-Object-Vision\Project-Environment\lib\site-packages\keras\src\losses.py:2976: The name tf.losses.sparse_softmax_cross_entropy is deprecated. Please use tf.compat.v1.losses.sparse_softmax_cross_entropy instead.
+]
+[2023-12-21 21:55:50,735: INFO: Data_Preparation: Image-to-text model loaded]
+[2023-12-21 21:55:50,917: INFO: Main: >>>>>> stage Data Ingestion started <<<<<<]
+[2023-12-21 21:55:50,917: INFO: Main: >>>>>> stage Data Ingestion completed <<<<<<
+
+x==========x]
+[2023-12-21 21:55:50,918: INFO: Main: >>>>>> stage Data Validation started <<<<<<]
+[2023-12-21 21:55:50,918: INFO: Main: >>>>>> stage Data Validation completed <<<<<<
+
+x==========x]
+[2023-12-21 21:55:50,919: INFO: Main: >>>>>> stage Data Preparation started <<<<<<]
+[2023-12-21 21:55:50,919: INFO: Main: >>>>>> stage Data Preparation completed <<<<<<
+
+x==========x]
+[2023-12-21 21:55:50,920: INFO: Main: >>>>>> stage Feature Extraction started <<<<<<]
+[2023-12-21 21:55:50,921: INFO: Main: >>>>>> stage Feature Extraction completed <<<<<<
+
+x==========x]
+[2023-12-21 21:55:50,922: INFO: Main: >>>>>> stage Model Architecture Developement started <<<<<<]
+[2023-12-21 21:55:50,936: INFO: Utils: yaml file: Src\Config.yaml loaded successfully]
+[2023-12-21 21:55:50,945: INFO: Utils: yaml file: Src\Params.yaml loaded successfully]
+[2023-12-21 21:55:50,947: INFO: config: Getting Model Architecture Configuration...]
+[2023-12-21 21:55:50,949: INFO: Model_Architecture: Model Build in progress..]
+[2023-12-21 21:55:51,366: WARNING: module_wrapper: From C:\Users\hp\Desktop\Voice-Inspired-Object-Vision\Project-Environment\lib\site-packages\keras\src\backend.py:1398: The name tf.executing_eagerly_outside_functions is deprecated. Please use tf.compat.v1.executing_eagerly_outside_functions instead.
+]
+[2023-12-21 21:55:52,201: INFO: Model_Architecture: Model Successfully Builted!]
+[2023-12-21 21:55:52,785: INFO: Model_Architecture: Model saved at Artifacts/VIOV_Model.pkl]
+[2023-12-21 21:55:52,786: INFO: Main: >>>>>> stage Model Architecture Developement completed <<<<<<
+
+x==========x]
+[2023-12-21 21:55:52,787: INFO: Main: >>>>>> stage Model Callbacks started <<<<<<]
+[2023-12-21 21:55:52,796: INFO: Utils: yaml file: Src\Config.yaml loaded successfully]
+[2023-12-21 21:55:52,803: INFO: Utils: yaml file: Src\Params.yaml loaded successfully]
+[2023-12-21 21:55:52,805: INFO: config: Getting Model Callbacks Configuration...]
+[2023-12-21 21:55:52,805: INFO: Model_Callbacks: Building Model Callbacks...]
+[2023-12-21 21:55:52,809: INFO: Model_Callbacks: Model callbacks saved at Artifacts/callbacks.pkl]
+[2023-12-21 21:55:52,810: INFO: Main: >>>>>> stage Model Callbacks completed <<<<<<
+
+x==========x]
+[2023-12-21 21:55:52,813: INFO: Main: >>>>>> stage Model Callbacks started <<<<<<]
+[2023-12-21 21:55:52,832: INFO: Utils: yaml file: Src\Config.yaml loaded successfully]
+[2023-12-21 21:55:52,846: INFO: Utils: yaml file: Src\Params.yaml loaded successfully]
+[2023-12-21 21:55:52,850: INFO: config: Getting Model Training configuration...]
+[2023-12-21 21:55:52,945: INFO: Model_Training: Loading Model from Artifacts/VIOV_Model.pkl ...]
+[2023-12-21 21:56:53,464: WARNING: optimizer: Skipping variable loading for optimizer 'Adam', because it has 59 variables whereas the saved optimizer has 1 variables. ]
+[2023-12-21 21:57:49,610: INFO: Model_Training: Model Successfully loaded!]
+[2023-12-21 21:57:49,611: INFO: Model_Training: Model Training Started...]
+[2023-12-21 21:57:49,626: ERROR: Main: Training data contains 0 samples, which is not sufficient to split it into a validation and training set as specified by `validation_split=0.3`. Either provide more data, or a different value for the `validation_split` argument.]
+Traceback (most recent call last):
+  File "C:\Users\hp\Desktop\Voice-Inspired-Object-Vision\Src\Main.py", line 88, in <module>
+    model_training_pipeline.start()
+  File "C:\Users\hp\Desktop\Voice-Inspired-Object-Vision\Src\Pipelines\stage_07_model_training.py", line 23, in start
+    model_trainer.train_model()
+  File "C:\Users\hp\Desktop\Voice-Inspired-Object-Vision\Src\Components\Model_Training.py", line 45, in train_model
+    model_history = model.fit(x = self.X, y = self.Y, epochs = self.EPOCHS, batch_size = self.BATCH_SIZE,
+  File "C:\Users\hp\Desktop\Voice-Inspired-Object-Vision\Project-Environment\lib\site-packages\keras\src\utils\traceback_utils.py", line 70, in error_handler
+    raise e.with_traceback(filtered_tb) from None
+  File "C:\Users\hp\Desktop\Voice-Inspired-Object-Vision\Project-Environment\lib\site-packages\keras\src\engine\data_adapter.py", line 1795, in train_validation_split
+    raise ValueError(
+ValueError: Training data contains 0 samples, which is not sufficient to split it into a validation and training set as specified by `validation_split=0.3`. Either provide more data, or a different value for the `validation_split` argument.

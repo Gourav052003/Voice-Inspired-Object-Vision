@@ -18,9 +18,9 @@ class ModelArchitecture:
         self.LOSS = config.LOSS
 
     def hidden_layer(self,input_layer):
-        Dense_1 = Dense(512,activation = 'tanh')(input_layer)
-        Dense_2 = Dense(512,activation = 'tanh')(Dense_1)
-        Dense_3 = Dense(512,activation = 'tanh')(Dense_2)
+        Dense_1 = Dense(2,activation = 'tanh')(input_layer)
+        Dense_2 = Dense(4,activation = 'tanh')(Dense_1)
+        Dense_3 = Dense(6,activation = 'tanh')(Dense_2)
         Dense_4 = Dense(self.FEATURE_SIZE,activation = 'tanh')(Dense_3)
 
         return Dense_4

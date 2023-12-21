@@ -19,7 +19,7 @@ class ModelCallbacks:
     def get_model_callbacks(self):
 
         logger.info(f"Building Model Callbacks...")
-        model_checkpoint = [ModelCheckpoint(save_best_only = True,filepath = 'Datasets/Traffic light BB/best_model.h5')]
+        model_checkpoint = [ModelCheckpoint(save_best_only = self.SAVE_BEST_ONLY,filepath =  self.BEST_MODEL_PATH)]
         save_as_pickle(self.PICKLE_MODEL_CALLBACKS,model_checkpoint)
         logger.info(f"Model callbacks saved at {self.PICKLE_MODEL_CALLBACKS}")
 

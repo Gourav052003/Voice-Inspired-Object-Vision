@@ -11,3 +11,8 @@ ModelArchitecture:
 
 ModelCallbacks:
   SAVE_BEST_ONLY : True  
+
+ModelTraining:
+  EPOCHS: 1
+  BATCH_SIZE : 10
+  VALIDATION_BATCH_SIZE: 10  

@@ -28,3 +28,16 @@ ModelArchitecture:
 ModelCallbacks:
   BEST_MODEL_PATH: "Artifacts/Best_model.h5"
   PICKLE_MODEL_CALLBACKS: "Artifacts/callbacks.pkl"
+
+ModelTraining:
+  SAVE_MODEL_PATH: "Artifacts/VIOV_Model.pkl"
+  PICKLE_MODEL_CALLBACKS: "Artifacts/callbacks.pkl"
+  BEST_MODEL_PATH: "Artifacts/Best_model.h5"
+  MODEL_HISTORY_PICKLE : "Artifacts/Model_history.pkl"
+  PICKLE_TRAIN_IMAGES_FEATURES_PATH : "Artifacts/train/image_features.pkl"
+  PICKLE_TRAIN_BB_FEATURES_PATH : "Artifacts/train/bb_labels.pkl"
+  PICKLE_TRAIN_TEXT_SEQUENCES_FEATURES_PATH : "Artifacts/train/text_sequences.pkl"
+  PICKLE_VALIDATION_IMAGES_FEATURES_PATH : "Artifacts/validation/image_features.pkl"
+  PICKLE_VALIDATION_BB_FEATURES_PATH : "Artifacts/validation/bb_labels.pkl"
+  PICKLE_VALIDATION_TEXT_SEQUENCES_FEATURES_PATH : "Artifacts/validation/text_sequences.pkl" 
+

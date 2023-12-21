@@ -6,7 +6,8 @@ from Entities.entity import (DataIngestionConfig,
                             DataPreparationConfig,
                             FeatureExtractionConfig,
                             ModelArchitectureConfig,
-                            ModelCallbacksConfig)
+                            ModelCallbacksConfig,
+                            ModelTrainingConfig)
 
 from box import ConfigBox                            
 
@@ -100,12 +101,14 @@ class ConfigurationManager:
         model_architecture_config = ModelArchitectureConfig(
 
             SAVE_MODEL_PATH = config.SAVE_MODEL_PATH,
+
             FEATURE_SIZE = params.FEATURE_SIZE,
             TEXT_SEQUENCE_INPUT_LENGTH = params.TEXT_SEQUENCE_INPUT_LENGTH,
             EMBEDDING_INPUT_DIMS = params.EMBEDDING_INPUT_DIMS,
             EMBEDDING_OUTPUT_DIMS = params.EMBEDDING_OUTPUT_DIMS,
             LEARNING_RATE = params.LEARNING_RATE,
             LOSS = params.LOSS
+            
 
         )
 
@@ -122,11 +125,39 @@ class ConfigurationManager:
 
         model_callbacks_config = ModelCallbacksConfig(
 
+
             BEST_MODEL_PATH = config.BEST_MODEL_PATH,
             PICKLE_MODEL_CALLBACKS = config.PICKLE_MODEL_CALLBACKS,
+
             SAVE_BEST_ONLY = params.SAVE_BEST_ONLY
         ) 
 
         return model_callbacks_config
 
 
+    def get_model_training_config(self)->ModelTrainingConfig:
+
+        logger.info(f"Getting Model Training configuration...")
+
+        config = self.config.ModelTraining
+        params = self.params.ModelTraining
+
+        model_training_config = ModelTrainingConfig(
+
+            EPOCHS = params.EPOCHS,
+            BATCH_SIZE  = params.BATCH_SIZE,
+            VALIDATION_BATCH_SIZE = params.VALIDATION_BATCH_SIZE,  
+
+            SAVE_MODEL_PATH = config.SAVE_MODEL_PATH,
+            PICKLE_MODEL_CALLBACKS = config.PICKLE_MODEL_CALLBACKS, 
+            BEST_MODEL_PATH = config.BEST_MODEL_PATH,
+            MODEL_HISTORY_PICKLE = config.MODEL_HISTORY_PICKLE,
+            PICKLE_TRAIN_IMAGES_FEATURES_PATH = config.PICKLE_TRAIN_IMAGES_FEATURES_PATH, 
+            PICKLE_TRAIN_BB_FEATURES_PATH = config.PICKLE_TRAIN_BB_FEATURES_PATH, 
+            PICKLE_TRAIN_TEXT_SEQUENCES_FEATURES_PATH = config.PICKLE_TRAIN_TEXT_SEQUENCES_FEATURES_PATH,
+            PICKLE_VALIDATION_IMAGES_FEATURES_PATH = config.PICKLE_VALIDATION_IMAGES_FEATURES_PATH, 
+            PICKLE_VALIDATION_BB_FEATURES_PATH = config.PICKLE_VALIDATION_BB_FEATURES_PATH, 
+            PICKLE_VALIDATION_TEXT_SEQUENCES_FEATURES_PATH = config.PICKLE_VALIDATION_TEXT_SEQUENCES_FEATURES_PATH  
+        )
+
+        return model_training_config

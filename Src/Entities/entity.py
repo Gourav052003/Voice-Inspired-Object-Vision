@@ -23,12 +23,6 @@ class DataPreparationConfig:
     TRAIN_META_DATA_FILE_PATH: Path 
     VALIDATION_META_DATA_FILE_PATH: Path 
 
-'''
-Feature Extraction Configuration is not needed because
-it will be hard coded with optimizations in components 
-Feature_Extraction.py and config.py
-'''
-
 @dataclass(frozen=True)
 class FeatureExtractionConfig:
     SET_TYPE : ConfigBox
@@ -38,7 +32,6 @@ class FeatureExtractionConfig:
     PICKLE_VALIDATION_IMAGES_FEATURES_PATH : Path
     PICKLE_VALIDATION_BB_FEATURES_PATH : Path
     PICKLE_VALIDATION_TEXT_SEQUENCES_FEATURES_PATH : Path
-
 
 @dataclass(frozen=True)
 class ModelArchitectureConfig:
@@ -56,5 +49,20 @@ class ModelCallbacksConfig:
     PICKLE_MODEL_CALLBACKS:Path
     SAVE_BEST_ONLY: bool
 
+@dataclass(frozen = True)
+class ModelTrainingConfig:
 
+    EPOCHS: int
+    BATCH_SIZE : int
+    VALIDATION_BATCH_SIZE: int 
+    SAVE_MODEL_PATH : Path 
+    PICKLE_MODEL_CALLBACKS: Path
+    BEST_MODEL_PATH: Path
+    MODEL_HISTORY_PICKLE : Path
+    PICKLE_TRAIN_IMAGES_FEATURES_PATH : Path
+    PICKLE_TRAIN_BB_FEATURES_PATH : Path
+    PICKLE_TRAIN_TEXT_SEQUENCES_FEATURES_PATH : Path
+    PICKLE_VALIDATION_IMAGES_FEATURES_PATH : Path
+    PICKLE_VALIDATION_BB_FEATURES_PATH : Path
+    PICKLE_VALIDATION_TEXT_SEQUENCES_FEATURES_PATH : Path 
 
