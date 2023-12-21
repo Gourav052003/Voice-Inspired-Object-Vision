@@ -155,14 +155,15 @@ class FeatureExtraction:
 
             image_features,text_sequences,bb_labels = self.get_data_features(set_type = set_type)
 
-            save_as_pickle(paths[0],image_features)
-            logger.info(f"{set_type} Image_features saved at {paths[0]}")
+            features = [image_features,bb_labels,text_sequences]
+            
+            features_names = ["image_features","bb_labels","text_sequences"]
 
-            save_as_pickle(paths[1],bb_labels)
-            logger.info(f"{set_type} bb_labels features saved at {paths[1]}")
+            for idx,feature in enumerate(features):
+                
+                save_as_pickle(paths[idx],feature)
 
-            save_as_pickle(paths[2],text_sequences)
-            logger.info(f"{set_type} text_sequences features saved at {paths[2]}")
+                logger.info(f"{set_type} {features_names[idx]} saved at {paths[idx]}")
             
             logger.info(f"{set_type} data feature extraction completed!")
 
