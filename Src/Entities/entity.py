@@ -1,5 +1,6 @@
 from dataclasses import dataclass
 from pathlib import Path
+from xmlrpc.client import Boolean
 
 @dataclass(frozen=True)
 class DataIngestionConfig:
@@ -37,6 +38,11 @@ class ModelArchitectureConfig:
     LEARNING_RATE: float
     LOSS : str 
 
+@dataclass(frozen=True)
+class ModelCallbacksConfig:
+    BEST_MODEL_PATH:Path
+    PICKLE_MODEL_CALLBACKS:Path
+    SAVE_BEST_ONLY: bool
 
 
 

@@ -5758,3 +5758,106 @@ x==========x]
 [2023-12-21 14:33:00,772: INFO: Main: >>>>>> stage Model Architecture Developement completed <<<<<<
 
 x==========x]
+[2023-12-21 17:06:24,051: WARNING: module_wrapper: From C:\Users\hp\Desktop\Voice-Inspired-Object-Vision\Project-Environment\lib\site-packages\keras\src\losses.py:2976: The name tf.losses.sparse_softmax_cross_entropy is deprecated. Please use tf.compat.v1.losses.sparse_softmax_cross_entropy instead.
+]
+[2023-12-21 17:06:36,170: INFO: Data_Preparation: Image-to-text model loaded]
+[2023-12-21 17:06:36,536: INFO: Main: >>>>>> stage Data Ingestion started <<<<<<]
+[2023-12-21 17:06:36,537: INFO: Main: >>>>>> stage Data Ingestion completed <<<<<<
+
+x==========x]
+[2023-12-21 17:06:36,539: INFO: Main: >>>>>> stage Data Validation started <<<<<<]
+[2023-12-21 17:06:36,541: INFO: Main: >>>>>> stage Data Validation completed <<<<<<
+
+x==========x]
+[2023-12-21 17:06:36,542: INFO: Main: >>>>>> stage Data Preparation started <<<<<<]
+[2023-12-21 17:06:36,543: INFO: Main: >>>>>> stage Data Preparation completed <<<<<<
+
+x==========x]
+[2023-12-21 17:06:36,543: INFO: Main: >>>>>> stage Feature Extraction started <<<<<<]
+[2023-12-21 17:06:36,544: INFO: Main: >>>>>> stage Feature Extraction completed <<<<<<
+
+x==========x]
+[2023-12-21 17:06:36,544: INFO: Main: >>>>>> stage Model Architecture Developement started <<<<<<]
+[2023-12-21 17:06:36,545: INFO: Main: >>>>>> stage Model Architecture Developement completed <<<<<<
+
+x==========x]
+[2023-12-21 17:06:36,546: INFO: Main: >>>>>> stage Model Callbacks started <<<<<<]
+[2023-12-21 17:06:36,558: INFO: Utils: yaml file: Src\Config.yaml loaded successfully]
+[2023-12-21 17:06:36,598: INFO: Utils: yaml file: Src\Params.yaml loaded successfully]
+[2023-12-21 17:06:36,599: INFO: config: Getting Model Callbacks Configuration...]
+[2023-12-21 17:06:36,602: ERROR: Main: 'module' object is not callable]
+Traceback (most recent call last):
+  File "C:\Users\hp\Desktop\Voice-Inspired-Object-Vision\Src\Main.py", line 77, in <module>
+    model_callbacks_training_pipeline.start()
+  File "C:\Users\hp\Desktop\Voice-Inspired-Object-Vision\Src\Pipelines\stage_06_model_callbacks.py", line 22, in start
+    model_callbacks = Model_Callbacks(config = model_callbacks_config)
+TypeError: 'module' object is not callable
+[2023-12-21 17:13:22,042: WARNING: module_wrapper: From C:\Users\hp\Desktop\Voice-Inspired-Object-Vision\Project-Environment\lib\site-packages\keras\src\losses.py:2976: The name tf.losses.sparse_softmax_cross_entropy is deprecated. Please use tf.compat.v1.losses.sparse_softmax_cross_entropy instead.
+]
+[2023-12-21 17:13:29,513: INFO: Data_Preparation: Image-to-text model loaded]
+[2023-12-21 17:13:30,041: INFO: Main: >>>>>> stage Data Ingestion started <<<<<<]
+[2023-12-21 17:13:30,041: INFO: Main: >>>>>> stage Data Ingestion completed <<<<<<
+
+x==========x]
+[2023-12-21 17:13:30,043: INFO: Main: >>>>>> stage Data Validation started <<<<<<]
+[2023-12-21 17:13:30,044: INFO: Main: >>>>>> stage Data Validation completed <<<<<<
+
+x==========x]
+[2023-12-21 17:13:30,045: INFO: Main: >>>>>> stage Data Preparation started <<<<<<]
+[2023-12-21 17:13:30,046: INFO: Main: >>>>>> stage Data Preparation completed <<<<<<
+
+x==========x]
+[2023-12-21 17:13:30,048: INFO: Main: >>>>>> stage Feature Extraction started <<<<<<]
+[2023-12-21 17:13:30,051: INFO: Main: >>>>>> stage Feature Extraction completed <<<<<<
+
+x==========x]
+[2023-12-21 17:13:30,052: INFO: Main: >>>>>> stage Model Architecture Developement started <<<<<<]
+[2023-12-21 17:13:30,054: INFO: Main: >>>>>> stage Model Architecture Developement completed <<<<<<
+
+x==========x]
+[2023-12-21 17:13:30,057: INFO: Main: >>>>>> stage Model Callbacks started <<<<<<]
+[2023-12-21 17:13:30,073: INFO: Utils: yaml file: Src\Config.yaml loaded successfully]
+[2023-12-21 17:13:30,081: INFO: Utils: yaml file: Src\Params.yaml loaded successfully]
+[2023-12-21 17:13:30,082: INFO: config: Getting Model Callbacks Configuration...]
+[2023-12-21 17:13:30,084: ERROR: Main: 'module' object is not callable]
+Traceback (most recent call last):
+  File "C:\Users\hp\Desktop\Voice-Inspired-Object-Vision\Src\Main.py", line 77, in <module>
+    model_callbacks_training_pipeline.start()
+  File "C:\Users\hp\Desktop\Voice-Inspired-Object-Vision\Src\Pipelines\stage_06_model_callbacks.py", line 22, in start
+    model_callbacks = Model_Callbacks(config = model_callbacks_config)
+TypeError: 'module' object is not callable
+[2023-12-21 17:14:04,115: WARNING: module_wrapper: From C:\Users\hp\Desktop\Voice-Inspired-Object-Vision\Project-Environment\lib\site-packages\keras\src\losses.py:2976: The name tf.losses.sparse_softmax_cross_entropy is deprecated. Please use tf.compat.v1.losses.sparse_softmax_cross_entropy instead.
+]
+[2023-12-21 17:14:07,493: INFO: Data_Preparation: Image-to-text model loaded]
+[2023-12-21 17:14:54,837: WARNING: module_wrapper: From C:\Users\hp\Desktop\Voice-Inspired-Object-Vision\Project-Environment\lib\site-packages\keras\src\losses.py:2976: The name tf.losses.sparse_softmax_cross_entropy is deprecated. Please use tf.compat.v1.losses.sparse_softmax_cross_entropy instead.
+]
+[2023-12-21 17:14:58,510: INFO: Data_Preparation: Image-to-text model loaded]
+[2023-12-21 17:14:58,709: INFO: Main: >>>>>> stage Data Ingestion started <<<<<<]
+[2023-12-21 17:14:58,710: INFO: Main: >>>>>> stage Data Ingestion completed <<<<<<
+
+x==========x]
+[2023-12-21 17:14:58,710: INFO: Main: >>>>>> stage Data Validation started <<<<<<]
+[2023-12-21 17:14:58,710: INFO: Main: >>>>>> stage Data Validation completed <<<<<<
+
+x==========x]
+[2023-12-21 17:14:58,711: INFO: Main: >>>>>> stage Data Preparation started <<<<<<]
+[2023-12-21 17:14:58,711: INFO: Main: >>>>>> stage Data Preparation completed <<<<<<
+
+x==========x]
+[2023-12-21 17:14:58,711: INFO: Main: >>>>>> stage Feature Extraction started <<<<<<]
+[2023-12-21 17:14:58,711: INFO: Main: >>>>>> stage Feature Extraction completed <<<<<<
+
+x==========x]
+[2023-12-21 17:14:58,712: INFO: Main: >>>>>> stage Model Architecture Developement started <<<<<<]
+[2023-12-21 17:14:58,713: INFO: Main: >>>>>> stage Model Architecture Developement completed <<<<<<
+
+x==========x]
+[2023-12-21 17:14:58,714: INFO: Main: >>>>>> stage Model Callbacks started <<<<<<]
+[2023-12-21 17:14:58,722: INFO: Utils: yaml file: Src\Config.yaml loaded successfully]
+[2023-12-21 17:14:58,728: INFO: Utils: yaml file: Src\Params.yaml loaded successfully]
+[2023-12-21 17:14:58,729: INFO: config: Getting Model Callbacks Configuration...]
+[2023-12-21 17:14:58,730: INFO: Model_Callbacks: Building Model Callbacks...]
+[2023-12-21 17:14:58,736: INFO: Model_Callbacks: Model callbacks saved at Artifacts/callbacks.pkl]
+[2023-12-21 17:14:58,737: INFO: Main: >>>>>> stage Model Callbacks completed <<<<<<
+
+x==========x]

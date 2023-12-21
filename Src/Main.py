@@ -4,6 +4,7 @@ from Pipelines.stage_02_data_validation import DataValidationTrainingPipeline
 from Pipelines.stage_03_data_preparation import DataPreparationTrainingPipeline
 from Pipelines.stage_04_feature_extraction import FeatureExtractionTrainingPipeline
 from Pipelines.stage_05_model_architecture import ModelArchitectureTrainingPipeline
+from Pipelines.stage_06_model_callbacks import ModelCallbacksTrainingPipeline
 
 
 
@@ -60,9 +61,21 @@ if __name__ == '__main__':
 
     try:
         logger.info(f">>>>>> stage {STAGE_NAME} started <<<<<<")
-        model_architecture_development_pipeline = ModelArchitectureTrainingPipeline()
-        model_architecture_development_pipeline.start()
+        # model_architecture_development_pipeline = ModelArchitectureTrainingPipeline()
+        # model_architecture_development_pipeline.start()
         logger.info(f">>>>>> stage {STAGE_NAME} completed <<<<<<\n\nx==========x")
     except Exception as e:
         logger.exception(e)
         raise e
+
+
+    STAGE_NAME = "Model Callbacks"
+
+    try:
+        logger.info(f">>>>>> stage {STAGE_NAME} started <<<<<<")
+        model_callbacks_training_pipeline = ModelCallbacksTrainingPipeline()
+        model_callbacks_training_pipeline.start()
+        logger.info(f">>>>>> stage {STAGE_NAME} completed <<<<<<\n\nx==========x")
+    except Exception as e:
+        logger.exception(e)
+        raise e      

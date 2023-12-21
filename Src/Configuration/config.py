@@ -4,7 +4,8 @@ from Utils import read_yaml
 from Entities.entity import (DataIngestionConfig,
                             DataValidationConfig,
                             DataPreparationConfig,
-                            ModelArchitectureConfig)
+                            ModelArchitectureConfig,
+                            ModelCallbacksConfig)
 
 
 class ConfigurationManager:
@@ -89,5 +90,22 @@ class ConfigurationManager:
 
         return model_architecture_config
 
+
+    def get_model_callbacks_config(self)->ModelCallbacksConfig: 
+
+        logger.info("Getting Model Callbacks Configuration...")
+
+
+        config = self.config.ModelCallbacks
+        params = self.params.ModelCallbacks
+
+        model_callbacks_config = ModelCallbacksConfig(
+
+            BEST_MODEL_PATH = config.BEST_MODEL_PATH,
+            PICKLE_MODEL_CALLBACKS = config.PICKLE_MODEL_CALLBACKS,
+            SAVE_BEST_ONLY = params.SAVE_BEST_ONLY
+        ) 
+
+        return model_callbacks_config
 
 

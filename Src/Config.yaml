@@ -16,3 +16,7 @@ DataPreparation:
 
 ModelArchitecture:
   SAVE_MODEL_PATH: "Artifacts/VIOV_Model.pkl"
+
+ModelCallbacks:
+  BEST_MODEL_PATH: "Artifacts/Best_model.h5"
+  PICKLE_MODEL_CALLBACKS: "Artifacts/callbacks.pkl"

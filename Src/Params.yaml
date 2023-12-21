@@ -5,3 +5,6 @@ ModelArchitecture:
   EMBEDDING_OUTPUT_DIMS : 2500
   LEARNING_RATE: 0.0001
   LOSS : "mse"  
+
+ModelCallbacks:
+  SAVE_BEST_ONLY : True  
