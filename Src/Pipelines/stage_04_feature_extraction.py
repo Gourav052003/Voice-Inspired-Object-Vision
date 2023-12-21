@@ -5,6 +5,7 @@ path = os.path.abspath("Src")
 sys.path.append(path)
 
 from Logger import logger
+from Configuration.config import  ConfigurationManager
 from Components.Feature_Extraction import FeatureExtraction
 
 STAGE_NAME = "Feature Extraction"
@@ -16,7 +17,9 @@ class FeatureExtractionTrainingPipeline:
 
     def start(self):
 
-        feature_extraction = FeatureExtraction()
+        config = ConfigurationManager()
+        feature_extraction_config = config.get_feature_extraction_config()
+        feature_extraction = FeatureExtraction(config = feature_extraction_config)
         feature_extraction.extract_features()
 
 if __name__ == "__main__":

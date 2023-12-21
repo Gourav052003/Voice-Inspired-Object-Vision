@@ -73,8 +73,8 @@ if __name__ == '__main__':
 
     try:
         logger.info(f">>>>>> stage {STAGE_NAME} started <<<<<<")
-        model_callbacks_training_pipeline = ModelCallbacksTrainingPipeline()
-        model_callbacks_training_pipeline.start()
+        # model_callbacks_training_pipeline = ModelCallbacksTrainingPipeline()
+        # model_callbacks_training_pipeline.start()
         logger.info(f">>>>>> stage {STAGE_NAME} completed <<<<<<\n\nx==========x")
     except Exception as e:
         logger.exception(e)

@@ -14,6 +14,14 @@ DataPreparation:
   TRAIN_META_DATA_FILE_PATH : "Artifacts/train/Meta-Data.csv"
   VALIDATION_META_DATA_FILE_PATH : "Artifacts/validation/Meta-Data.csv"
 
+FeatureExtraction:
+  PICKLE_TRAIN_IMAGES_FEATURES_PATH : "Artifacts/train/image_features.pkl"
+  PICKLE_TRAIN_BB_FEATURES_PATH : "Artifacts/train/bb_labels.pkl"
+  PICKLE_TRAIN_TEXT_SEQUENCES_FEATURES_PATH : "Artifacts/train/text_sequences.pkl"
+  PICKLE_VALIDATION_IMAGES_FEATURES_PATH : "Artifacts/validation/image_features.pkl"
+  PICKLE_VALIDATION_BB_FEATURES_PATH : "Artifacts/validation/bb_labels.pkl"
+  PICKLE_VALIDATION_TEXT_SEQUENCES_FEATURES_PATH : "Artifacts/validation/text_sequences.pkl"
+
 ModelArchitecture:
   SAVE_MODEL_PATH: "Artifacts/VIOV_Model.pkl"
 

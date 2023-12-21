@@ -1,5 +1,6 @@
 from Logger import logger
 from Utils import save_as_pickle
+from Entities.entity import FeatureExtractionConfig
 
 from tqdm import tqdm
 from glob import glob
@@ -18,8 +19,19 @@ import pandas as pd
 
 class FeatureExtraction:
 
-    def __init__(self):
-        ...
+    def __init__(self,config:FeatureExtractionConfig):
+          
+        self.PICKLE_SET_WISE_PATHS = {
+            config.SET_TYPE.train : [config.PICKLE_TRAIN_IMAGES_FEATURES_PATH,
+            config.PICKLE_TRAIN_BB_FEATURES_PATH,
+            config.PICKLE_TRAIN_TEXT_SEQUENCES_FEATURES_PATH],
+
+            config.SET_TYPE.validation : [config.PICKLE_VALIDATION_IMAGES_FEATURES_PATH,
+            config.PICKLE_VALIDATION_BB_FEATURES_PATH,
+            config.PICKLE_VALIDATION_TEXT_SEQUENCES_FEATURES_PATH
+            ]
+        }
+
 
     def get_tokenizer(self,text):
 
@@ -137,34 +149,25 @@ class FeatureExtraction:
 
     def extract_features(self):
 
-        logger.info(f"Started Extracting Training data features ....")
-        train_image_features,train_text_sequences,train_bb_labels = self.get_data_features(set_type = 'train')
+        for set_type,paths in self.PICKLE_SET_WISE_PATHS.items():
+            
+            logger.info(f"Started Extracting {set_type} data features ....")
 
-        save_as_pickle('Artifacts/train/image_features.pkl',train_image_features)
-        logger.info(f"Train Image_features saved at Artifacts/train/image_features.pkl")
+            image_features,text_sequences,bb_labels = self.get_data_features(set_type = set_type)
 
-        save_as_pickle('Artifacts/train/text_sequences.pkl',train_text_sequences)
-        logger.info(f"Train Image_features saved at Artifacts/train/text_sequences.pkl")
-        
-        save_as_pickle('Artifacts/train/bb_labels.pkl',train_bb_labels)
-        logger.info(f"Train BB_labels features saved at Artifacts/train/bb_labels.pkl")
+            save_as_pickle(paths[0],image_features)
+            logger.info(f"{set_type} Image_features saved at {paths[0]}")
 
-        logger.info(f"Training data feature extraction completed!")
+            save_as_pickle(paths[1],bb_labels)
+            logger.info(f"{set_type} bb_labels features saved at {paths[1]}")
+
+            save_as_pickle(paths[2],text_sequences)
+            logger.info(f"{set_type} text_sequences features saved at {paths[2]}")
+            
+            logger.info(f"{set_type} data feature extraction completed!")
 
 
-        logger.info(f"Started Extracting Validation data features ....")
-        validation_image_features,validation_text_sequences,validation_bb_labels = self.get_data_features(set_type = 'validation')
 
-        save_as_pickle('Artifacts/validation/image_features.pkl',validation_image_features)
-        logger.info(f"Validation Image_features saved at Artifacts/validation/image_features.pkl")
-        
-        save_as_pickle('Artifacts/validation/text_sequences.pkl',validation_text_sequences)
-        logger.info(f"Validation text_sequences saved at Artifacts/validation/text_sequences.pkl")
-        
-        save_as_pickle('Artifacts/validation/bb_labels.pkl',validation_bb_labels)
-        logger.info(f"Validation bb_labels saved at Artifacts/validation/bb_labels.pkl")
-        
-        logger.info(f"Validation data feature extraction completed!")
 
 
 

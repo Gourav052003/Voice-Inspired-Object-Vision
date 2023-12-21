@@ -5861,3 +5861,94 @@ x==========x]
 [2023-12-21 17:14:58,737: INFO: Main: >>>>>> stage Model Callbacks completed <<<<<<
 
 x==========x]
+[2023-12-21 18:31:46,182: WARNING: module_wrapper: From C:\Users\hp\Desktop\Voice-Inspired-Object-Vision\Project-Environment\lib\site-packages\keras\src\losses.py:2976: The name tf.losses.sparse_softmax_cross_entropy is deprecated. Please use tf.compat.v1.losses.sparse_softmax_cross_entropy instead.
+]
+[2023-12-21 18:32:15,566: INFO: Data_Preparation: Image-to-text model loaded]
+[2023-12-21 18:32:16,207: INFO: Main: >>>>>> stage Data Ingestion started <<<<<<]
+[2023-12-21 18:32:16,208: INFO: Main: >>>>>> stage Data Ingestion completed <<<<<<
+
+x==========x]
+[2023-12-21 18:32:16,208: INFO: Main: >>>>>> stage Data Validation started <<<<<<]
+[2023-12-21 18:32:16,208: INFO: Main: >>>>>> stage Data Validation completed <<<<<<
+
+x==========x]
+[2023-12-21 18:32:16,209: INFO: Main: >>>>>> stage Data Preparation started <<<<<<]
+[2023-12-21 18:32:16,211: INFO: Main: >>>>>> stage Data Preparation completed <<<<<<
+
+x==========x]
+[2023-12-21 18:32:16,215: INFO: Main: >>>>>> stage Feature Extraction started <<<<<<]
+[2023-12-21 18:32:16,216: ERROR: Main: __init__() missing 1 required positional argument: 'config']
+Traceback (most recent call last):
+  File "C:\Users\hp\Desktop\Voice-Inspired-Object-Vision\Src\Main.py", line 53, in <module>
+    Feature_extractiion_training_pipeline.start()
+  File "C:\Users\hp\Desktop\Voice-Inspired-Object-Vision\Src\Pipelines\stage_04_feature_extraction.py", line 19, in start
+    feature_extraction = FeatureExtraction()
+TypeError: __init__() missing 1 required positional argument: 'config'
+[2023-12-21 18:35:44,780: WARNING: module_wrapper: From C:\Users\hp\Desktop\Voice-Inspired-Object-Vision\Project-Environment\lib\site-packages\keras\src\losses.py:2976: The name tf.losses.sparse_softmax_cross_entropy is deprecated. Please use tf.compat.v1.losses.sparse_softmax_cross_entropy instead.
+]
+[2023-12-21 18:36:00,146: INFO: Data_Preparation: Image-to-text model loaded]
+[2023-12-21 18:36:01,156: INFO: Main: >>>>>> stage Data Ingestion started <<<<<<]
+[2023-12-21 18:36:01,156: INFO: Main: >>>>>> stage Data Ingestion completed <<<<<<
+
+x==========x]
+[2023-12-21 18:36:01,157: INFO: Main: >>>>>> stage Data Validation started <<<<<<]
+[2023-12-21 18:36:01,157: INFO: Main: >>>>>> stage Data Validation completed <<<<<<
+
+x==========x]
+[2023-12-21 18:36:01,157: INFO: Main: >>>>>> stage Data Preparation started <<<<<<]
+[2023-12-21 18:36:01,161: INFO: Main: >>>>>> stage Data Preparation completed <<<<<<
+
+x==========x]
+[2023-12-21 18:36:01,162: INFO: Main: >>>>>> stage Feature Extraction started <<<<<<]
+[2023-12-21 18:36:01,163: ERROR: Main: __init__() missing 1 required positional argument: 'config']
+Traceback (most recent call last):
+  File "C:\Users\hp\Desktop\Voice-Inspired-Object-Vision\Src\Main.py", line 53, in <module>
+    Feature_extractiion_training_pipeline.start()
+  File "C:\Users\hp\Desktop\Voice-Inspired-Object-Vision\Src\Pipelines\stage_04_feature_extraction.py", line 20, in start
+    feature_extraction = FeatureExtraction()
+TypeError: __init__() missing 1 required positional argument: 'config'
+[2023-12-21 18:38:32,312: WARNING: module_wrapper: From C:\Users\hp\Desktop\Voice-Inspired-Object-Vision\Project-Environment\lib\site-packages\keras\src\losses.py:2976: The name tf.losses.sparse_softmax_cross_entropy is deprecated. Please use tf.compat.v1.losses.sparse_softmax_cross_entropy instead.
+]
+[2023-12-21 18:38:45,125: INFO: Data_Preparation: Image-to-text model loaded]
+[2023-12-21 18:38:45,613: INFO: Main: >>>>>> stage Data Ingestion started <<<<<<]
+[2023-12-21 18:38:45,614: INFO: Main: >>>>>> stage Data Ingestion completed <<<<<<
+
+x==========x]
+[2023-12-21 18:38:45,614: INFO: Main: >>>>>> stage Data Validation started <<<<<<]
+[2023-12-21 18:38:45,614: INFO: Main: >>>>>> stage Data Validation completed <<<<<<
+
+x==========x]
+[2023-12-21 18:38:45,615: INFO: Main: >>>>>> stage Data Preparation started <<<<<<]
+[2023-12-21 18:38:45,615: INFO: Main: >>>>>> stage Data Preparation completed <<<<<<
+
+x==========x]
+[2023-12-21 18:38:45,616: INFO: Main: >>>>>> stage Feature Extraction started <<<<<<]
+[2023-12-21 18:38:45,699: INFO: Utils: yaml file: Src\Config.yaml loaded successfully]
+[2023-12-21 18:38:45,721: INFO: Utils: yaml file: Src\Params.yaml loaded successfully]
+[2023-12-21 18:38:45,722: INFO: config: Getting Feature Extraction Configuration...]
+[2023-12-21 18:38:45,724: INFO: Feature_Extraction: Started Extracting train data features ....]
+[2023-12-21 18:38:45,725: INFO: Feature_Extraction: train Image_features saved at Artifacts/train/image_features.pkl]
+[2023-12-21 18:38:45,726: INFO: Feature_Extraction: train bb_labels features saved at Artifacts/train/bb_labels.pkl]
+[2023-12-21 18:38:45,733: INFO: Feature_Extraction: train text_sequences features saved at Artifacts/train/text_sequences.pkl]
+[2023-12-21 18:38:45,734: INFO: Feature_Extraction: train data feature extraction completed!]
+[2023-12-21 18:38:45,735: INFO: Feature_Extraction: Started Extracting validation" data features ....]
+[2023-12-21 18:38:45,736: INFO: Feature_Extraction: validation" Image_features saved at Artifacts/validation/image_features.pkl]
+[2023-12-21 18:38:45,737: INFO: Feature_Extraction: validation" bb_labels features saved at Artifacts/validation/bb_labels.pkl]
+[2023-12-21 18:38:45,738: INFO: Feature_Extraction: validation" text_sequences features saved at Artifacts/validation/text_sequences.pkl]
+[2023-12-21 18:38:45,739: INFO: Feature_Extraction: validation" data feature extraction completed!]
+[2023-12-21 18:38:45,740: INFO: Main: >>>>>> stage Feature Extraction completed <<<<<<
+
+x==========x]
+[2023-12-21 18:38:45,741: INFO: Main: >>>>>> stage Model Architecture Developement started <<<<<<]
+[2023-12-21 18:38:45,741: INFO: Main: >>>>>> stage Model Architecture Developement completed <<<<<<
+
+x==========x]
+[2023-12-21 18:38:45,742: INFO: Main: >>>>>> stage Model Callbacks started <<<<<<]
+[2023-12-21 18:38:45,765: INFO: Utils: yaml file: Src\Config.yaml loaded successfully]
+[2023-12-21 18:38:45,770: INFO: Utils: yaml file: Src\Params.yaml loaded successfully]
+[2023-12-21 18:38:45,771: INFO: config: Getting Model Callbacks Configuration...]
+[2023-12-21 18:38:45,772: INFO: Model_Callbacks: Building Model Callbacks...]
+[2023-12-21 18:38:45,779: INFO: Model_Callbacks: Model callbacks saved at Artifacts/callbacks.pkl]
+[2023-12-21 18:38:45,781: INFO: Main: >>>>>> stage Model Callbacks completed <<<<<<
+
+x==========x]

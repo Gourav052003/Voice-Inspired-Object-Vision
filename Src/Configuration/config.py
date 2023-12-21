@@ -4,8 +4,11 @@ from Utils import read_yaml
 from Entities.entity import (DataIngestionConfig,
                             DataValidationConfig,
                             DataPreparationConfig,
+                            FeatureExtractionConfig,
                             ModelArchitectureConfig,
                             ModelCallbacksConfig)
+
+from box import ConfigBox                            
 
 
 class ConfigurationManager:
@@ -67,7 +70,25 @@ class ConfigurationManager:
 
         return data_preparation_config   
 
+    def get_feature_extraction_config(self)-> FeatureExtractionConfig:
 
+        logger.info("Getting Feature Extraction Configuration...")
+
+        config = self.config.FeatureExtraction
+        params = self.params.FeatureExtraction
+
+        feature_extraction_config = FeatureExtractionConfig(
+
+            SET_TYPE = ConfigBox(params.SET_TYPE),
+            PICKLE_TRAIN_IMAGES_FEATURES_PATH  = config.PICKLE_TRAIN_IMAGES_FEATURES_PATH,
+            PICKLE_TRAIN_BB_FEATURES_PATH  = config.PICKLE_TRAIN_BB_FEATURES_PATH,
+            PICKLE_TRAIN_TEXT_SEQUENCES_FEATURES_PATH  = config.PICKLE_TRAIN_TEXT_SEQUENCES_FEATURES_PATH,
+            PICKLE_VALIDATION_IMAGES_FEATURES_PATH  = config.PICKLE_VALIDATION_IMAGES_FEATURES_PATH,
+            PICKLE_VALIDATION_BB_FEATURES_PATH  = config.PICKLE_VALIDATION_BB_FEATURES_PATH,
+            PICKLE_VALIDATION_TEXT_SEQUENCES_FEATURES_PATH  = config.PICKLE_VALIDATION_TEXT_SEQUENCES_FEATURES_PATH
+        )
+
+        return feature_extraction_config
 
     def get_model_architecture_config(self)->ModelArchitectureConfig:
 

@@ -1,5 +1,6 @@
 from dataclasses import dataclass
 from pathlib import Path
+from box import ConfigBox
 from xmlrpc.client import Boolean
 
 @dataclass(frozen=True)
@@ -27,6 +28,17 @@ Feature Extraction Configuration is not needed because
 it will be hard coded with optimizations in components 
 Feature_Extraction.py and config.py
 '''
+
+@dataclass(frozen=True)
+class FeatureExtractionConfig:
+    SET_TYPE : ConfigBox
+    PICKLE_TRAIN_IMAGES_FEATURES_PATH : Path
+    PICKLE_TRAIN_BB_FEATURES_PATH : Path
+    PICKLE_TRAIN_TEXT_SEQUENCES_FEATURES_PATH : Path
+    PICKLE_VALIDATION_IMAGES_FEATURES_PATH : Path
+    PICKLE_VALIDATION_BB_FEATURES_PATH : Path
+    PICKLE_VALIDATION_TEXT_SEQUENCES_FEATURES_PATH : Path
+
 
 @dataclass(frozen=True)
 class ModelArchitectureConfig:
