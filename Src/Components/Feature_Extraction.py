@@ -155,7 +155,6 @@ class FeatureExtraction:
 
             image_features,text_sequences,bb_labels = self.get_data_features(set_type = set_type)
 
-           
             features = [image_features,bb_labels,text_sequences]
 
             features_names = ["image_features","bb_labels","text_sequences"]

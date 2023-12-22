@@ -17,19 +17,18 @@ class ModelTraining:
         self.MODEL_HISTORY_PICKLE = config.MODEL_HISTORY_PICKLE
 
         self.PICKLE_TRAIN_IMAGES_FEATURES_PATH = config.PICKLE_TRAIN_IMAGES_FEATURES_PATH
-        self. PICKLE_TRAIN_TEXT_SEQUENCES_FEATURES_PATH = config.PICKLE_TRAIN_TEXT_SEQUENCES_FEATURES_PATH
+        self.PICKLE_TRAIN_TEXT_SEQUENCES_FEATURES_PATH = config.PICKLE_TRAIN_TEXT_SEQUENCES_FEATURES_PATH
         self.PICKLE_TRAIN_BB_FEATURES_PATH = config.PICKLE_TRAIN_BB_FEATURES_PATH
 
         self.PICKLE_VALIDATION_IMAGES_FEATURES_PATH = config.PICKLE_VALIDATION_IMAGES_FEATURES_PATH
-        self. PICKLE_VALIDATION_TEXT_SEQUENCES_FEATURES_PATH = config.PICKLE_VALIDATION_TEXT_SEQUENCES_FEATURES_PATH
+        self.PICKLE_VALIDATION_TEXT_SEQUENCES_FEATURES_PATH = config.PICKLE_VALIDATION_TEXT_SEQUENCES_FEATURES_PATH
         self.PICKLE_VALIDATION_BB_FEATURES_PATH = config.PICKLE_VALIDATION_BB_FEATURES_PATH
 
 
     def load_data(self):
 
         logger.info("Loading Training Data...")
-        train_image_features = load_pickle(self.PICKLE_TRAIN_IMAGES_FEATURES_PATH) 
-        print(self.PICKLE_TRAIN_IMAGES_FEATURES_PATH)
+        train_image_features = load_pickle(self.PICKLE_TRAIN_IMAGES_FEATURES_PATH)
         train_text_sequences_features = load_pickle(self.PICKLE_TRAIN_TEXT_SEQUENCES_FEATURES_PATH) 
         train_bb_features = load_pickle(self.PICKLE_TRAIN_BB_FEATURES_PATH)
         logger.info("Training Data Successfully Loaded!")
@@ -42,13 +41,10 @@ class ModelTraining:
 
         train_x = [train_image_features,train_text_sequences_features]
         train_y = train_bb_features
-
-
+      
         validation_x = [validation_image_features,validation_text_sequences_features]
         validation_y = validation_bb_features
-        print(validation_x[0].shape)
-
-
+     
         return train_x,train_y,validation_x,validation_y
 
 
@@ -56,28 +52,23 @@ class ModelTraining:
 
         train_x,train_y,validation_x,validation_y = self.load_data()
 
-        # logger.info(f"Loading Model from {self.SAVE_MODEL_PATH} ...")
+        logger.info(f"Loading Model from {self.SAVE_MODEL_PATH} ...")
 
-        # model = load_pickle(self.SAVE_MODEL_PATH)
-        # logger.info(f"Model Successfully loaded!")
+        model = load_pickle(self.SAVE_MODEL_PATH)
+        logger.info(f"Model Successfully loaded!")
 
-        # logger.info(f"Model Callbacks loading from {self.PICKLE_MODEL_CALLBACKS}...")
-        # model_callbacks = load_pickle(self.PICKLE_MODEL_CALLBACKS)
-        # logger.info(f"Model Callbacks Successfully loaded!")
+        logger.info(f"Model Callbacks loading from {self.PICKLE_MODEL_CALLBACKS}...")
+        model_callbacks = load_pickle(self.PICKLE_MODEL_CALLBACKS)
+        logger.info(f"Model Callbacks Successfully loaded!")
 
 
         logger.info(f"Model Training Started...")
-        # model_history = model.fit(x = self.X, y = self.Y, epochs = self.EPOCHS, batch_size = self.BATCH_SIZE,
-        #             validation_data = (self.VAL_X,self.VAL_Y), validation_batch_size = self.VALIDATION_BATCH_SIZE,
-        #             callbacks = self.PICKLE_MODEL_CALLBACKS
-        #             ) 
-
-        # model_history = model.fit(x = train_x, y = train_y, epochs = self.EPOCHS, batch_size = self.BATCH_SIZE,
-        #             validation_split = 0.3, validation_batch_size = self.VALIDATION_BATCH_SIZE,
-        #             callbacks = model_callbacks
-        #             ) 
+        model_history = model.fit(x = train_x, y = train_y, epochs = self.EPOCHS, batch_size = self.BATCH_SIZE,
+                    validation_data = (validation_x,validation_y), validation_batch_size = self.VALIDATION_BATCH_SIZE,
+                    callbacks = model_callbacks
+                    ) 
 
         logger.info(f"Model training Completed!")
         logger.info(f"Best Model Saved at {self.BEST_MODEL_PATH}")                     
-        # save_as_pickle(self.MODEL_HISTORY_PICKLE,model_history)           
+        save_as_pickle(self.MODEL_HISTORY_PICKLE,model_history)           
         logger.info(f"Model History saved at {self.MODEL_HISTORY_PICKLE}")

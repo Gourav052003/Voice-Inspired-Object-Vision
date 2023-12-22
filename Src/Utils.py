@@ -54,7 +54,7 @@ def remove_files(dir_name):
 
 
 def save_as_pickle(fname,data):
-  pfile = open(fname,'ab')
+  pfile = open(fname,'wb')
   dump(data,pfile)
   pfile.close()
 
