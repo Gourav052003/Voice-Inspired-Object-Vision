@@ -10,6 +10,7 @@ from keras.preprocessing.sequence import pad_sequences
 
 import os
 import cv2
+import time
 import mimetypes
 import numpy as np
 import moviepy.video.io.ImageSequenceClip
@@ -51,7 +52,9 @@ class ModelTesting:
     def source_image(self,source,model,text,standard_scaler,tokenizer):
 
         logger.info(f"Source is an <<Image>>!")
+    
         img = cv2.imread(source)
+       
 
         filename = os.path.split(source)[1]
 
@@ -91,7 +94,6 @@ class ModelTesting:
         anyFrame = True
         video_frames = []
         height,width = None,None
-        count = 0
 
         logger.info(f"Source is a <<Video>>!")
 
@@ -120,31 +122,40 @@ class ModelTesting:
             video_frames.append(bb_frame)
             print(xmin,ymin,xmax,ymax)
 
-            count+=1
+            cv2.imshow("Video show",bb_frame)
 
-            if count>=10:
+            if cv2.waitKey(1) & 0xFF == ord('q'): 
                 break
-            # k = cv2.waitKey(1)
-            # print("next",k)
-            # if k == ord('q'):
-            #     break
 
         clip = moviepy.video.io.ImageSequenceClip.ImageSequenceClip(video_frames, fps=20)
 
         save_directory_path = os.path.join(self.SAVE_RESULTS_PATH,"Videos")
-        os.mkdirs(save_directory_path,exits_ok = True)
+        os.makedirs(save_directory_path,exist_ok = True)
         clip.write_videofile(f"{save_directory_path}/Results_{filename}")
         logger.info(f"Results saved at {save_directory_path}/{filename}")
 
 
 
-    def source_camera(self,source,model,text,standard_scaler,tokenizer):
-        vid = cv2.VideoCapture(source)
+    def source_camera(self,model,text,standard_scaler,tokenizer):
+
+        timestamp = time.ctime(time.time())
+        timestamp = timestamp.split(" ")
+        timestamp = "_".join(timestamp)
+        timestamp = timestamp.split(":")
+        timestamp = "_".join(timestamp)
+
+
+        save_directory_path = os.path.join(self.SAVE_RESULTS_PATH,"Real-time")
+        os.makedirs(save_directory_path,exist_ok = True)
+        
+        vid = cv2.VideoCapture(0)
 
         anyFrame = True
+        video_frames = []
 
         while anyFrame:
             anyFrame,frame = vid.read()
+
 
             image_features,text_sequence = self.get_test_data(frame,[text],tokenizer)
             prediction = model.predict([image_features,text_sequence])
@@ -164,24 +175,34 @@ class ModelTesting:
 
 
             bb_frame = cv2.rectangle(frame,(xmin,ymax),(xmax,ymin),(255, 0, 0),2)
+            bb_frame = cv2.cvtColor(bb_frame, cv2.COLOR_BGR2RGB)
+           
+            video_frames.append(bb_frame)
 
+            bb_frame = cv2.cvtColor(bb_frame, cv2.COLOR_RGB2BGR)
             cv2.imshow('frame', bb_frame)
 
             if cv2.waitKey(1) & 0xFF == ord('q'):
                 break
-
+        
         vid.release()
-        cv2.destroyAllWindows()  
+        cv2.destroyAllWindows()
+        clip = moviepy.video.io.ImageSequenceClip.ImageSequenceClip(video_frames, fps=10)
+        clip.write_videofile(f"{save_directory_path}/{timestamp}.mp4")
+        logger.info(f"Results saved at {save_directory_path}/{timestamp}.mp4")
+
+
 
 
     def get_prediction(self,model,standard_scaler,tokenizer,text:str = None,source:Path=None):
 
-        if source==None:
-            logger.info("Source not Provided!")
-            return
 
         if text==None:
             logger.info("Text not Provided!")
+            return
+
+        if source==None:
+            self.source_camera(model,text,standard_scaler,tokenizer)
             return
 
         filetype = mimetypes.guess_type(source)[0].split('/')[0]
@@ -192,10 +213,7 @@ class ModelTesting:
         elif filetype == 'video':
             data = self.source_video(source,model,text,standard_scaler,tokenizer)
             return data
-        else:
-            self.source_camera(source,model,text,standard_scaler,tokenizer)
-
-
+        
 
     def predict(self):
         
@@ -214,7 +232,8 @@ class ModelTesting:
 
 
         logger.info(f"Proceeding with the Prediction...")
-        self.get_prediction(model = model,standard_scaler = sc,tokenizer = tk,text = self.TEXT,source = self.SOURCE)
-        logger.inof(f"Predictions Completed!")
+        # self.get_prediction(model = model,standard_scaler = sc,tokenizer = tk,text = self.TEXT,source = self.SOURCE)
+        self.get_prediction(model = model,standard_scaler = sc,tokenizer = tk,text = self.TEXT)
+        logger.info(f"Predictions Completed!")
 
         

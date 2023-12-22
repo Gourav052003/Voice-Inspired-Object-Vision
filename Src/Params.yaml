@@ -18,5 +18,5 @@ ModelTraining:
   VALIDATION_BATCH_SIZE: 10 
 
 ModelTesting:
-  SOURCE : "Artifacts/test/road2.png"
+  SOURCE : "Artifacts/test/videos/pexels_videos_2108672 (720p).mp4"
   TEXT : "A red light above the road"

@@ -44,8 +44,8 @@ ModelTraining:
   PICKLE_VALIDATION_BB_FEATURES_PATH : "Artifacts/validation/bb_labels.pkl"
   PICKLE_VALIDATION_TEXT_SEQUENCES_FEATURES_PATH : "Artifacts/validation/text_sequences.pkl" 
 
-  ModelTesting:
-    BEST_MODEL_PATH : "Artifacts/Best_model.h5"
-    PICKLE_TOKENIZER_PATH : "Artifacts/tokenizer.pkl"
-    PICKLE_STANDARD_SCALER_PATH : "Artifacts/StandardScaler.pkl"
-    SAVE_RESULTS_PATH : "Artifacts/Results"
+ModelTesting:
+  BEST_MODEL_PATH : "Artifacts/Best_model.h5"
+  PICKLE_TOKENIZER_PATH : "Artifacts/tokenizer.pkl"
+  PICKLE_STANDARD_SCALER_PATH : "Artifacts/StandardScaler.pkl"
+  SAVE_RESULTS_PATH : "Artifacts/Results"
