@@ -1,3 +1,4 @@
+from cgi import parse_multipart
 from Logger import logger
 from Constant import CONFIG_FILE_PATH,PARAMS_FILE_PATH,DOWNLOAD_URL
 from Utils import read_yaml
@@ -7,7 +8,8 @@ from Entities.entity import (DataIngestionConfig,
                             FeatureExtractionConfig,
                             ModelArchitectureConfig,
                             ModelCallbacksConfig,
-                            ModelTrainingConfig)
+                            ModelTrainingConfig,
+                            ModelTestingConfig)
 
 from box import ConfigBox                            
 
@@ -161,3 +163,25 @@ class ConfigurationManager:
         )
 
         return model_training_config
+
+
+    def get_model_testing_config(self)->ModelTestingConfig:
+
+        logger.info("Getting Model Testing Configuration...")
+
+        config = self.config.ModelTesting
+        params = self.params.ModelTesting
+
+        model_testing_config = ModelTestingConfig(
+
+            BEST_MODEL_PATH = config.BEST_MODEL_PATH,
+            PICKLE_TOKENIZER_PATH = config.PICKLE_TOKENIZER_PATH,
+            PICKLE_STANDARD_SCALER_PATH = config.PICKLE_STANDARD_SCALER_PATH,
+            SAVE_RESULTS_PATH = config.SAVE_RESULTS_PATH,
+
+            SOURCE = params.SOURCE,
+            TEXT = params.TEXT
+
+        )
+
+        return model_testing_config

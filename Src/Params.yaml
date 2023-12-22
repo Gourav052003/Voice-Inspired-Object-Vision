@@ -15,4 +15,8 @@ ModelCallbacks:
 ModelTraining:
   EPOCHS: 1
   BATCH_SIZE : 10
-  VALIDATION_BATCH_SIZE: 10  
+  VALIDATION_BATCH_SIZE: 10 
+
+ModelTesting:
+  SOURCE : "Artifacts/test/road2.png"
+  TEXT : "A red light above the road"

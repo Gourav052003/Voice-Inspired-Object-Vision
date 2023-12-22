@@ -32,14 +32,17 @@ class FeatureExtraction:
             ]
         }
 
+        self.PICKLE_TOKENIZER_PATH = config.PICKLE_TOKENIZER_PATH
+        self.PICKLE_STANDARD_SCALER_PATH = config.PICKLE_STANDARD_SCALER_PATH
+
 
     def get_tokenizer(self,text):
 
         logger.info(f"Building Tokenizer...")
         tokenizer = Tokenizer(oov_token = '<OOV>')
         tokenizer.fit_on_texts(text)
-        save_as_pickle('Artifacts/tokenizer.pkl',tokenizer)
-        logger.info(f"Tokenizer saved at Artifacts/tokenizer.pkl")
+        save_as_pickle(self.PICKLE_TOKENIZER_PATH,tokenizer)
+        logger.info(f"Tokenizer saved at {self.PICKLE_TOKENIZER_PATH}")
 
         return tokenizer  
 
@@ -61,8 +64,8 @@ class FeatureExtraction:
         bb_df = pd.DataFrame(bb_labels)
         sc = StandardScaler()
         standardized_bb_labels = sc.fit_transform(bb_df)
-        save_as_pickle("Artifacts/StandardScaler.pkl",sc)
-        logger.info(f"Standardizer saved at Artifacts/StandardScaler.pkl")
+        save_as_pickle(self.PICKLE_STANDARD_SCALER_PATH,sc)
+        logger.info(f"Standardizer saved at {self.PICKLE_STANDARD_SCALER_PATH}")
 
         return standardized_bb_labels 
 

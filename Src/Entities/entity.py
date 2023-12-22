@@ -32,6 +32,8 @@ class FeatureExtractionConfig:
     PICKLE_VALIDATION_IMAGES_FEATURES_PATH : Path
     PICKLE_VALIDATION_BB_FEATURES_PATH : Path
     PICKLE_VALIDATION_TEXT_SEQUENCES_FEATURES_PATH : Path
+    PICKLE_TOKENIZER_PATH : Path
+    PICKLE_STANDARD_SCALER_PATH : Path
 
 @dataclass(frozen=True)
 class ModelArchitectureConfig:
@@ -66,3 +68,12 @@ class ModelTrainingConfig:
     PICKLE_VALIDATION_BB_FEATURES_PATH : Path
     PICKLE_VALIDATION_TEXT_SEQUENCES_FEATURES_PATH : Path 
 
+
+@dataclass(frozen=True)
+class ModelTestingConfig:
+    BEST_MODEL_PATH : Path
+    PICKLE_TOKENIZER_PATH : Path
+    PICKLE_STANDARD_SCALER_PATH : Path
+    SOURCE : Path
+    TEXT : str
+    SAVE_RESULTS_PATH:Path
